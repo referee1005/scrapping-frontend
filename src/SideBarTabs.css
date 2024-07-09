@@ -1,0 +1,456 @@
+.sidebar_tabs {
+    padding: 0 !important;
+}
+
+.sidebar_tabs .MuiToolbar-root {
+    padding: 0;
+    min-height: auto;
+}
+
+.sidebar_tabs .inner_tabs {
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar_tabs .inner_tabs .tabs_head {
+    display: flex;
+    gap: 1px;
+    background-color: #002b5a;
+    padding: 15px 25px !important;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.sidebar_tabs .inner_tabs .tabs_head button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    opacity: .6;
+    transition: opacity .2s ease-in-out;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 50px;
+}
+
+.sidebar_tabs .inner_tabs .tabs_head button.Mui-selected {
+    background-color: rgba(217, 224, 232, .24);
+    opacity: 1;
+}
+
+.sidebar_tabs .inner_tabs span.MuiTabs-indicator {
+    display: none;
+}
+
+.sidebar_tabs .inner_tabs span.MuiTabs-indicator {
+    display: none;
+}
+
+.sidebar_panel {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar_panel .settings-panel-contentwrapper-active-tab h3 {
+    font-size: 20px;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+.sidebar_panel .settings-panel-contentwrapper-active-tab span {
+    font-size: 16px;
+    color: #666;
+}
+
+.sidebar_tabs .translation-memory-glossary-tab {
+    background-color: #f5f6f7;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    margin-top: 20px;
+    flex-direction: column;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar_tabs .translation-memory-glossary-tab .label_pre {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    border: 1px dashed #d7d8db;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+
+.sidebar_tabs .translation-memory-glossary-tab .label_pre label {
+    margin: 0;
+    gap: 10px;
+}
+
+.sidebar_tabs .translation-memory-glossary-tab .label_pre span {
+    padding: 0;
+    font-size: 14px;
+}
+
+.sidebar_tabs .translation-memory-glossary-tab .label_pre {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    border: 1px dashed #d7d8db;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+
+.sidebar_tabs .translation-memory-glossary-tab .label_pre label {
+    margin: 0;
+    gap: 10px;
+}
+
+.sidebar_tabs .translation-memory-glossary-tab .label_pre span {
+    padding: 0;
+    font-size: 14px;
+}
+
+.sidebar_tabs .tab-table-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar_tabs .tab-table-title h2 {
+    text-align: left;
+    padding: 15px 10px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.sidebar_tabs .tab-table-title button {
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+    box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+    background-color: #09c;
+    transition: .3s ease;
+    font-weight: bold;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: .28571429rem;
+    padding: .78571429em 1.5em .78571429em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.sidebar_tabs .tab-table-title button:hover {
+    background-color: #0889b3;
+}
+
+.settings-panel-table {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+
+.settings-panel-table .settings-panel-table-rowHeading {
+    display: grid;
+    align-items: center;
+    background-color: #6f6f6f;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    grid-template-columns: 8% 5% minmax(0, 1fr) 20% 5% 22%;
+}
+
+.settings-panel-table .settings-panel-table-rowHeading .Heading-column {
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.settings-panel-table .settings-panel-table-rows-container .settings-panel-row-content {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    background-color: #fff;
+    grid-template-columns: 8% 5% minmax(0, 1fr) 0 5% 22%;
+}
+
+.settings-panel-table .settings-panel-row {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d7d8db;
+    overflow: auto;
+}
+
+.settings-panel-table .settings-panel-table-rows-container .settings-panel-row-content .align-center {
+    text-align: center;
+}
+
+.settings-panel-table .settings-panel-table-rows-container .settings-panel-row-content input {
+    width: 100%;
+    padding: 4px;
+    background-color: transparent;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.settings-panel-table .settings-panel-table-rows-container .settings-panel-row-content .tm-key-row-menu-button button {
+    min-width: 170px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #000;
+    background: #eaebee;
+    padding: 4px 8px;
+    text-align: center;
+    border: 1px solid #9e9e9e;
+}
+
+.sidebar_tabs .tab-table-title.inactive_Res input {
+    border-radius: 2px;
+    border: 1px solid #d7d8db;
+    padding: 6px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: none;
+}
+
+.login_btn {
+    padding: 10px !important;
+}
+
+.login_btn button {
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+    box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+    background-color: #09c;
+    transition: .3s ease;
+    font-size: 16px;
+    padding: .78571429em 1.5em .78571429em;
+    border: none;
+    border-radius: .28571429rem;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.login_btn button:hover {
+    background-color: #0889b3;
+}
+
+.settings-panel-table.machine_trans .settings-panel-table-rowHeading {
+    min-height: 40px;
+    grid-template-columns: 15% minmax(0, 1fr) 15% 15%;
+}
+
+.settings-panel-table.machine_trans .settings-panel-row-content {
+    min-height: 40px;
+    grid-template-columns: 15% minmax(0, 1fr) 15% 15%;
+    background-color: #e4f2fb;
+}
+
+.settings-panel-table.machine_trans .tm-key-lookup {
+    font-size: 14px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    gap: 5px;
+}
+
+.settings-panel-table.machine_trans .tm-key-update {
+    font-size: 13px;
+    text-align: left !important;
+}
+
+.login_btn.machine_t_btn {
+    margin: 40px 0;
+}
+
+.sidebar_tabs .advance_setting .option_box .option-description {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    line-height: 22px;
+    align-items: start;
+    text-align: left;
+}
+
+.sidebar_tabs .advance_setting .option_box .option-description h2 {
+    font-size: 19px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar_tabs .advance_setting .option_box .option-description h2 img {
+    max-width: 70px;
+}
+
+.sidebar_tabs .advance_setting .option_box p {
+    font-size: 14px;
+}
+
+.sidebar_tabs .advance_setting .option_box {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.sidebar_tabs .advance_setting .option_box .selectables_option {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 10px;
+}
+
+.sidebar_tabs .advance_setting .option_box .selectables_option .MuiSelect-select {
+    font-size: 16px;
+    padding: 9px 46px 9px 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: inset 0 1px 3px #ddd;
+}
+
+.sidebar_tabs .advance_setting .option_box .selectables_option {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 10px;
+}
+
+.sidebar_tabs .advance_setting .option_box .selectables_option .MuiSelect-select {
+    font-size: 16px;
+    padding: 9px 46px 9px 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: inset 0 1px 3px #ddd;
+}
+
+.sidebar_tabs .advance_setting .option_box .option-description .MuiToolbar-root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sidebar_tabs .advance_setting .option_box .selectables_option .MuiSelect-select span.notranslate {
+    color: #000;
+}
+
+.settings-panel-table .settings-panel-row form.settings-panel-row-content {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    grid-template-columns: 8% 5% minmax(0, 1fr) 20% 5% 22%;
+    TEXT-ALIGN: CENTER;
+}
+
+.settings-panel-table .settings-panel-row form.settings-panel-row-content input.tm-key-create-resource-row-input {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: solid 1px #d9e0e8;
+    font-size: 14px;
+    line-height: 1.15;
+}
+
+.settings-panel-table .translation-memory-glossary-tab-buttons-group button {
+    height: 26px;
+    font-size: 14px !important;
+    min-width: unset;
+    margin: 0 !important;
+    padding: 0 8px;
+    border-radius: unset;
+    cursor: default;
+    opacity: .45 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.settings-panel-table .translation-memory-glossary-tab-buttons-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.settings-panel-table .translation-memory-glossary-tab-buttons-group button.close-button {
+    background-color: #f2711c;
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+    opacity: 1 !important;
+}
+
+.settings-panel-table .translation-memory-glossary-tab-buttons-group button.close-button:hover {
+    background-color: #f26202;
+}
+
+.settings-panel-table .translation-memory-glossary-tab-buttons-group button.confirm-button {
+    background-color: #09c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.settings-panel-table .settings-panel-row-extra-content {
+    background-color: #fff;
+    box-shadow: inset 0px 2px 5px 0px #e4e4e4;
+    transition: .8s ease-in-out;
+}
+
+.settings-panel-table .settings-panel-row-extra-content form.action-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.settings-panel-table .settings-panel-row-extra-content  .translation-memory-glossary-tab-import {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sidebar_tabs .settings-panel-row-content {
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar_tabs .settings-panel-row-content .align-center {
+    justify-content: center;
+}

@@ -1,0 +1,300 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1); 
+  border-radius: 40px;
+}
+
+
+/* 05/07/2024 */
+
+header.header_bar {
+  background: #002b5c;
+}
+header.header_bar .MuiToolbar-root {
+  display: flex;
+  justify-content: space-between;
+}
+header.header_bar .logo_branding img {
+  width: 100%;
+  max-width: 200px;
+}
+
+header.header_bar {
+  background: #002b5c;
+}
+
+header.header_bar .navigation {
+  gap: 25px;
+}
+
+header.header_bar .navigation a {
+  text-decoration: none;
+}
+
+header.header_bar .navigation a.button_white {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 43, 90) !important;
+  border-radius: 18px;
+  padding: 4px 18px;
+}
+
+.cat_tool_desc {
+  padding: 100px 0;
+}
+
+.cat_tool_desc h3 {
+  text-align: center;
+  font-size: 40px;
+  padding: 8px 0 6px;
+  margin: 0px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.cat_tool_desc form {
+  padding: 24px;
+  background: #f5f6f7;
+  width: 100%;
+}
+
+.cat_tool_desc form .form_grid {
+  padding: 0;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form_group {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form_group p {
+  color: #788190;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.form_group input, .form_group .MuiSelect-select {
+  padding: 3px 5px 3px 9px;
+  font-size: 16px !important;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid rgba(34, 36, 38, .15);
+  height: 37px !important;
+  box-shadow: inset 0 1px 3px #ddd !important;
+  min-width: 120px;
+  background: #fff;
+}
+
+.drag_upload {
+  padding: 30px;
+  position: relative;
+  border: 1px dashed #ccc !important;
+  margin: 18px 22px;
+  min-height: 200px;
+  border-radius: 4px;
+  background: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drag_upload h4 {
+  text-align: center;
+  margin: 2px 0 0 0;
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+.drag_upload  p {
+  font-size: 24px;
+  text-decoration: underline;
+  color: #788190;
+}
+
+.form_bottom_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.form_bottom_bar button {
+  text-transform: none;
+  background: #aebdcd;
+  padding: 8px 16px;
+  width: auto !important;
+  min-width: 200px;
+  transition: all 100ms ease-in;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  line-height: normal;
+  font-weight: 400;
+  font-size: 18px !important;
+}
+
+.cat_tool_desc {
+  flex-direction: column;
+}
+
+.sidebar_opening button {
+  gap: 7px;
+  fill: #0055b8;
+  color:#000;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.settings-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 0 10px;
+  background-color: #002b5a;
+  color: #fff;
+}
+
+.settings-panel-header .settings-panel-header-logo {
+  background: url(https://www.matecat.com/public/build/images/logo_matecat_small_white.svg) no-repeat;
+  background-position-y: center;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}
+
+.drawer_sidebar .MuiDrawer-paper {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100%;
+  max-width: 1024px;
+  background-color: #fff;
+  transition: transform .5s ease-in-out !important;
+}
+
+.form_bottom_bar {
+  width: 100%;
+}
+
+.cat_tool_desc form .search_lang .MuiInputBase-formControl  { 
+    padding: 3px 25px 3px 9px !important;
+    font-size: 16px !important;
+    border-radius: 2px;
+    height: 45px !important;
+    box-shadow: none !important;
+    min-width: 160px;
+    max-width: 160px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: inset 0 1px 3px #ddd !important;
+  }
+  
+.cat_tool_desc form .search_lang .MuiInputBase-formControl fieldset {
+  border: none;
+  border-radius: 2px;
+}
+
+.cat_tool_desc form .search_lang input {
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+
+.cat_tool_desc form .search_lang .MuiInputBase-formControl .MuiAutocomplete-tag {
+  text-wrap: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin: 5px 0;
+}
+
+.cat_tool_desc form .search_lang .MuiAutocomplete-endAdornment.css-p1olib-MuiAutocomplete-endAdornment {
+    z-index: 1;
+}
+
+.cat_tool_desc form .search_lang button {
+    background: #fff;
+}
+
+.cat_tool_desc form .search_lang .MuiInputBase-formControl:before {
+  display: none;
+}
+
+
+.cat_tool_desc form .search_lang .MuiInputBase-formControl:after {
+  display: none;
+}
+
+.cat_tool_desc form input#project-name {border: 1px solid rgba(34, 36, 38, .15);}
+
+.cat_tool_desc form fieldset {
+    border: none;
+    border-radius: 2px;
+}
+
+.MuiContainer-root {
+  max-width: 90% !important;
+}
