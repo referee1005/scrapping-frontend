@@ -32,38 +32,23 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  border-radius: 40px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #fff; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1); 
-  border-radius: 40px;
-}
-
 
 /* 05/07/2024 */
 
 header.header_bar {
   background: #002b5c;
 }
+
 header.header_bar .MuiToolbar-root {
   display: flex;
   justify-content: space-between;
 }
+
 header.header_bar .logo_branding img {
   width: 100%;
   max-width: 200px;
@@ -100,19 +85,22 @@ header.header_bar .navigation a.button_white {
   font-weight: 600;
   margin-bottom: 60px;
 }
-
+.p {
+  color: #1fbd1f;
+  font-weight: bold;
+}
 .cat_tool_desc form {
   padding: 24px;
   background: #f5f6f7;
-  width: 100%;
 }
-
+span {
+  font-size: x-small;
+}
 .cat_tool_desc form .form_grid {
   padding: 0;
   width: 100%;
   gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .form_group {
@@ -126,12 +114,13 @@ header.header_bar .navigation a.button_white {
   font-weight: normal;
 }
 
-.form_group input, .form_group .MuiSelect-select {
+.form_group input,
+.form_group .MuiSelect-select {
   padding: 3px 5px 3px 9px;
   font-size: 16px !important;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  border: 1px solid rgba(34, 36, 38, .15);
+  border: 1px solid rgba(34, 36, 38, 0.15);
   height: 37px !important;
   box-shadow: inset 0 1px 3px #ddd !important;
   min-width: 120px;
@@ -141,11 +130,11 @@ header.header_bar .navigation a.button_white {
 .drag_upload {
   padding: 30px;
   position: relative;
-  border: 1px dashed #ccc !important;
+  border: 1px dashed #ccc;
   margin: 18px 22px;
   min-height: 200px;
   border-radius: 4px;
-  background: #fff !important;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +148,7 @@ header.header_bar .navigation a.button_white {
   font-weight: 600;
 }
 
-.drag_upload  p {
+.drag_upload p {
   font-size: 24px;
   text-decoration: underline;
   color: #788190;
@@ -189,112 +178,91 @@ header.header_bar .navigation a.button_white {
   font-size: 18px !important;
 }
 
-.cat_tool_desc {
-  flex-direction: column;
+.analyse-item {
+  background-color: #eaebee;
+  border-left: 1px solid #d9e0e8;
 }
 
-.sidebar_opening button {
-  gap: 7px;
-  fill: #0055b8;
-  color:#000;
-  text-decoration: none;
-  text-transform: none;
-  letter-spacing: 0;
+.analyse-item * {
+  font-size: 16px;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
 }
 
-.settings-panel-header {
+.analyse-item > div {
+  height: 32px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 55px;
-  padding: 0 10px;
-  background-color: #002b5a;
-  color: #fff;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  padding-right: 6px;
 }
 
-.settings-panel-header .settings-panel-header-logo {
-  background: url(https://www.matecat.com/public/build/images/logo_matecat_small_white.svg) no-repeat;
-  background-position-y: center;
-  background-size: contain;
-  width: 35px;
-  height: 35px;
+.analyse-item > div:first-child {
+  border-bottom: 1px solid #d9e0e8;
+  height: 60px;
+  font-weight: bold;
 }
 
-.drawer_sidebar .MuiDrawer-paper {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  width: 90%;
-  height: 100%;
-  max-width: 1024px;
-  background-color: #fff;
-  transition: transform .5s ease-in-out !important;
-}
-
-.form_bottom_bar {
-  width: 100%;
-}
-
-.cat_tool_desc form .search_lang .MuiInputBase-formControl  { 
-    padding: 3px 25px 3px 9px !important;
-    font-size: 16px !important;
-    border-radius: 2px;
-    height: 45px !important;
-    box-shadow: none !important;
-    min-width: 160px;
-    max-width: 160px;
-    background: #fff;
-    overflow: hidden;
-    border: 1px solid rgba(34, 36, 38, .15);
-    box-shadow: inset 0 1px 3px #ddd !important;
-  }
-  
-.cat_tool_desc form .search_lang .MuiInputBase-formControl fieldset {
+.analyse-item:first-child {
+  background-color: #f5f6f7;
   border: none;
-  border-radius: 2px;
 }
 
-.cat_tool_desc form .search_lang input {
-  padding: 0 !important;
-  box-shadow: none !important;
-  border: none !important;
-  background: transparent !important;
+.analyse-item:first-child > div:first-child {
+  font-weight: normal;
+  border: none;
+}
+.analyse-item:last-child > div:last-child {
+  font-weight: normal;
+  border: none;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.analyse-item1 {
+  background-color: #FFF;
+  border-left: 1px solid #d9e0e8;
+}
+.color{
+  background-color: #eeeee5;
+  border-radius: 1px;
+  visibility:visible;
+}
+.color1{
+
+  visibility:hidden;
+}
+.analyse-item1 * {
+  font-size: 16px;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
 }
 
-
-.cat_tool_desc form .search_lang .MuiInputBase-formControl .MuiAutocomplete-tag {
-  text-wrap: nowrap;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  margin: 5px 0;
+.analyse-item1 > div {
+  height: 36px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  padding-right: 6px;
+  margin-bottom: -18px;
 }
 
-.cat_tool_desc form .search_lang .MuiAutocomplete-endAdornment.css-p1olib-MuiAutocomplete-endAdornment {
-    z-index: 1;
+.analyse-item1 > div:first-child {
+  /* border-bottom: 1px solid #d9e0e8; */
+  height: 55px;
+  font-weight: bold;
 }
 
-.cat_tool_desc form .search_lang button {
-    background: #fff;
+.analyse-item1:first-child {
+  background-color: #fff;
+  border: none;
 }
 
-.cat_tool_desc form .search_lang .MuiInputBase-formControl:before {
-  display: none;
-}
-
-
-.cat_tool_desc form .search_lang .MuiInputBase-formControl:after {
-  display: none;
-}
-
-.cat_tool_desc form input#project-name {border: 1px solid rgba(34, 36, 38, .15);}
-
-.cat_tool_desc form fieldset {
-    border: none;
-    border-radius: 2px;
-}
-
-.MuiContainer-root {
-  max-width: 90% !important;
+.analyse-item1:first-child > div:first-child {
+  font-weight: normal;
+  border: none;
 }

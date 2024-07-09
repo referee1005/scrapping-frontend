@@ -92,6 +92,7 @@ function Editor() {
                             variant="contained"
                             style={{ marginRight: "2px" }}
                           >
+                            T+>>
                           </Button>
                           <Button variant="contained">TRANSLATED</Button>
                         </div>
