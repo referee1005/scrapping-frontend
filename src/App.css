@@ -393,7 +393,6 @@ ul.MuiAutocomplete-listbox {
   grid-template-columns: repeat(1, 1fr);
   column-gap: 15px;
   text-align: left;
-  /* max-height: 50vh; */
   /* max-width: 90%; */
 }
 
