@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect ,useRef} from "react";
 import {
   Container,
   Toolbar,
@@ -13,10 +13,17 @@ import {
   Drawer,
   OutlinedInput,
   Autocomplete,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
   InputLabel,
   List,
   ListItem,
+  Popper,
   ListItemText,
+  Checkbox,
+  Link
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
@@ -24,14 +31,47 @@ import UploadIcon from "@mui/icons-material/Upload";
 import Chip from "@mui/material/Chip";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBarTabs from "../SideBarTabs";
+import { styled } from "@mui/system";
+
+const CustomPopper = styled(Popper)({
+  zIndex: 9999,
+  width: '100vw',
+  height: '100vh',
+});
+
+const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
+  '& .MuiAutocomplete-paper': {
+    width: '100vw',
+    height: '100vh',
+    margin: 0,
+    position: 'fixed',
+    top: 0,
+    left: 0,
+  },
+  '& .MuiAutocomplete-listbox': {
+    width: '100%',
+    height: 'calc(100% - 56px)',
+  },
+}));
+
+const languages = [
+  'English', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Korean', 'Russian', 'Italian', 'Portuguese',
+  'Arabic', 'Hindi', 'Bengali', 'Punjabi', 'Javanese', 'Malay', 'Vietnamese', 'Telugu', 'Marathi', 'Tamil',
+  'Urdu', 'Turkish', 'Persian', 'Polish', 'Ukrainian', 'Romanian', 'Dutch', 'Greek', 'Czech', 'Swedish',
+  'Hungarian', 'Serbian', 'Belarusian', 'Finnish', 'Slovak', 'Danish', 'Norwegian', 'Bulgarian', 'Croatian', 'Lithuanian',
+  'Slovenian', 'Latvian', 'Estonian', 'Maltese', 'Icelandic', 'Luxembourgish', 'Macedonian', 'Albanian', 'Bosnian', 'Georgian'
+];
 
 export default function CatTool() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState([]);
-
-  const handleChange = (event, value) => {
-    setSelectedValues(value);
-  };
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [formatDialogOpen, setFormatDialogOpen]=useState(false)
+  const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const autocompleteRef = useRef(null);
+  const [autocompleteOpen, setAutocompleteOpen] = useState(false);
+  const [selectedFromLanguage, setSelectedFromLanguage] = useState(null);
   const top100Films = [
     { label: "The Shawshank Redemption", value: "Re" },
     { label: "The Godfather", year: 1972 },
@@ -159,132 +199,21 @@ export default function CatTool() {
     { label: "3 Idiots", year: 2009 },
     { label: "Monty Python and the Holy Grail", year: 1975 },
   ];
-  const top100Filmss = [
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Godfather', year: 1972 },
-    { title: 'The Godfather: Part II', year: 1974 },
-    { title: 'The Dark Knight', year: 2008 },
-    { title: '12 Angry Men', year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: 'Pulp Fiction', year: 1994 },
-    {
-      title: 'The Lord of the Rings: The Return of the King',
-      year: 2003,
-    },
-    { title: 'The Good, the Bad and the Ugly', year: 1966 },
-    { title: 'Fight Club', year: 1999 },
-    {
-      title: 'The Lord of the Rings: The Fellowship of the Ring',
-      year: 2001,
-    },
-    {
-      title: 'Star Wars: Episode V - The Empire Strikes Back',
-      year: 1980,
-    },
-    { title: 'Forrest Gump', year: 1994 },
-    { title: 'Inception', year: 2010 },
-    {
-      title: 'The Lord of the Rings: The Two Towers',
-      year: 2002,
-    },
-    { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
-    { title: 'Goodfellas', year: 1990 },
-    { title: 'The Matrix', year: 1999 },
-    { title: 'Seven Samurai', year: 1954 },
-    {
-      title: 'Star Wars: Episode IV - A New Hope',
-      year: 1977,
-    },
-    { title: 'City of God', year: 2002 },
-    { title: 'Se7en', year: 1995 },
-    { title: 'The Silence of the Lambs', year: 1991 },
-    { title: "It's a Wonderful Life", year: 1946 },
-    { title: 'Life Is Beautiful', year: 1997 },
-    { title: 'The Usual Suspects', year: 1995 },
-    { title: 'Léon: The Professional', year: 1994 },
-    { title: 'Spirited Away', year: 2001 },
-    { title: 'Saving Private Ryan', year: 1998 },
-    { title: 'Once Upon a Time in the West', year: 1968 },
-    { title: 'American History X', year: 1998 },
-    { title: 'Interstellar', year: 2014 },
-    { title: 'Casablanca', year: 1942 },
-    { title: 'City Lights', year: 1931 },
-    { title: 'Psycho', year: 1960 },
-    { title: 'The Green Mile', year: 1999 },
-    { title: 'The Intouchables', year: 2011 },
-    { title: 'Modern Times', year: 1936 },
-    { title: 'Raiders of the Lost Ark', year: 1981 },
-    { title: 'Rear Window', year: 1954 },
-    { title: 'The Pianist', year: 2002 },
-    { title: 'The Departed', year: 2006 },
-    { title: 'Terminator 2: Judgment Day', year: 1991 },
-    { title: 'Back to the Future', year: 1985 },
-    { title: 'Whiplash', year: 2014 },
-    { title: 'Gladiator', year: 2000 },
-    { title: 'Memento', year: 2000 },
-    { title: 'The Prestige', year: 2006 },
-    { title: 'The Lion King', year: 1994 },
-    { title: 'Apocalypse Now', year: 1979 },
-    { title: 'Alien', year: 1979 },
-    { title: 'Sunset Boulevard', year: 1950 },
-    {
-      title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
-      year: 1964,
-    },
-    { title: 'The Great Dictator', year: 1940 },
-    { title: 'Cinema Paradiso', year: 1988 },
-    { title: 'The Lives of Others', year: 2006 },
-    { title: 'Grave of the Fireflies', year: 1988 },
-    { title: 'Paths of Glory', year: 1957 },
-    { title: 'Django Unchained', year: 2012 },
-    { title: 'The Shining', year: 1980 },
-    { title: 'WALL·E', year: 2008 },
-    { title: 'American Beauty', year: 1999 },
-    { title: 'The Dark Knight Rises', year: 2012 },
-    { title: 'Princess Mononoke', year: 1997 },
-    { title: 'Aliens', year: 1986 },
-    { title: 'Oldboy', year: 2003 },
-    { title: 'Once Upon a Time in America', year: 1984 },
-    { title: 'Witness for the Prosecution', year: 1957 },
-    { title: 'Das Boot', year: 1981 },
-    { title: 'Citizen Kane', year: 1941 },
-    { title: 'North by Northwest', year: 1959 },
-    { title: 'Vertigo', year: 1958 },
-    {
-      title: 'Star Wars: Episode VI - Return of the Jedi',
-      year: 1983,
-    },
-    { title: 'Reservoir Dogs', year: 1992 },
-    { title: 'Braveheart', year: 1995 },
-    { title: 'M', year: 1931 },
-    { title: 'Requiem for a Dream', year: 2000 },
-    { title: 'Amélie', year: 2001 },
-    { title: 'A Clockwork Orange', year: 1971 },
-    { title: 'Like Stars on Earth', year: 2007 },
-    { title: 'Taxi Driver', year: 1976 },
-    { title: 'Lawrence of Arabia', year: 1962 },
-    { title: 'Double Indemnity', year: 1944 },
-    {
-      title: 'Eternal Sunshine of the Spotless Mind',
-      year: 2004,
-    },
-    { title: 'Amadeus', year: 1984 },
-    { title: 'To Kill a Mockingbird', year: 1962 },
-    { title: 'Toy Story 3', year: 2010 },
-    { title: 'Logan', year: 2017 },
-    { title: 'Full Metal Jacket', year: 1987 },
-    { title: 'Dangal', year: 2016 },
-    { title: 'The Sting', year: 1973 },
-    { title: '2001: A Space Odyssey', year: 1968 },
-    { title: "Singin' in the Rain", year: 1952 },
-    { title: 'Toy Story', year: 1995 },
-    { title: 'Bicycle Thieves', year: 1948 },
-    { title: 'The Kid', year: 1921 },
-    { title: 'Inglourious Basterds', year: 2009 },
-    { title: 'Snatch', year: 2000 },
-    { title: '3 Idiots', year: 2009 },
-    { title: 'Monty Python and the Holy Grail', year: 1975 },
-  ];
+
+  useEffect(() => {
+    if (dialogOpen) {
+      setAutocompleteOpen(true);
+    }
+  }, [dialogOpen]);
+  const handleFromLanguageChange = (event, newValue) => {
+    setSelectedFromLanguage(newValue);
+  };
+
+  const handleChange = (event, newValue) => {
+    setSelectedLanguages(newValue);
+    setInputValue(newValue.length > 1 ? `${newValue.length} languages selected` : newValue.join(', '));
+  };
+
   const [from, setFrom] = useState("");
 
   const handleFileDrop = (e) => {
@@ -308,6 +237,26 @@ export default function CatTool() {
     setDrawerOpen(open);
   };
 
+  const handleAutocompleteClick = () => {
+    setDialogOpen(true);
+  };
+
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
+  const closeDialog=()=>{
+    setDialogOpen(false)
+  }
+  const handleTextFieldClick = () => {
+    setDialogOpen(true);
+  };
+  const openFormatDialog=()=>{
+setFormatDialogOpen(true)
+  }
+  const handleFormatDialogClose=()=>{
+    setFormatDialogOpen(false)
+  }
   return (
     <Container>
       <Toolbar className="cat_tool_desc">
@@ -325,6 +274,8 @@ export default function CatTool() {
                 required
                 placeholder="Enter project name"
               />
+       
+
             </FormGroup>
 
             <FormGroup className="form_group">
@@ -336,6 +287,7 @@ export default function CatTool() {
                 disablePortal
                 id="combo-box-demo"
                 options={top100Films}
+                onChange={handleFromLanguageChange}
                 renderInput={(params) => <TextField {...params} />}
               />
             </FormGroup>
@@ -344,42 +296,17 @@ export default function CatTool() {
               <Typography variant="body1" gutterBottom>
                 To
               </Typography>
-              {/* <Stack spacing={2} >
-                <Autocomplete
-                  multiple
-                  className="search_lang multiple"
-                  disablePortal
-                  id="combo-box-demo"
-                  options={top100Filmsss}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </Stack> */}
                     <Stack spacing={2}>
-          <Autocomplete
-            multiple
-            className="search_lang multiple"
-            disablePortal
-            id="combo-box-demo"
-            options={top100Filmss}
-            getOptionLabel={(option) => option.title}
-            onChange={handleChange}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                variant="standard"
-                placeholder=""
-              />
-            )}
-            renderTags={(value, getTagProps) =>
-              value.length > 1
-                ? <span>{`${value.length} selected`}</span>
-                : value.map((option, index) => (
-                    <div {...getTagProps({ index })} key={option.title}>
-                      {option.title}
-                    </div>
-                  ))
-            }
-          />
+                    <TextField
+                    value={inputValue}
+                    onClick={handleTextFieldClick}
+                    placeholder="Select Languages"
+                    fullWidth
+                    variant="outlined"
+                    InputProps={{
+                      readOnly: true,
+                    }}
+                  />
         </Stack>
 
             </FormGroup>
@@ -392,7 +319,7 @@ export default function CatTool() {
                 disablePortal
                 className="search_lang"
                 id="combo-box-demo"
-                options={top100Films}
+                options={[]}
                 renderInput={(params) => <TextField {...params} />}
               />
             </FormGroup>
@@ -405,7 +332,7 @@ export default function CatTool() {
                 disablePortal
                 className="search_lang"
                 id="combo-box-demo"
-                options={top100Films}
+                options={[]}
                 renderInput={(params) => <TextField {...params} />}
               />
             </FormGroup>
@@ -432,6 +359,210 @@ export default function CatTool() {
               </FormControl>
             </FormGroup>
           </Toolbar>
+
+
+          {/* dialog start */}
+          
+          <Toolbar>
+            <Dialog open={dialogOpen} onClose={handleDialogClose} className="multilang_dialog">
+              <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
+              <DialogTitle>Select Languages</DialogTitle>
+              <button onClick={closeDialog}>X</button>
+              </div>
+          
+              <DialogContent className="dialog_content">
+                <div ref={autocompleteRef}>
+                  <Toolbar className="w-100">
+                  <b>From</b> <span>{selectedFromLanguage ? selectedFromLanguage.label : "Select a language"}</span>
+                  </Toolbar>
+                  <Toolbar className="w-100">
+                    <b>To</b> 
+                    <Autocomplete
+                      multiple
+                      open={autocompleteOpen}
+                      value={selectedLanguages}
+                      onChange={handleChange}
+                      options={languages}
+                      disableCloseOnSelect
+                      getOptionLabel={(option) => option}
+                      renderOption={(props, option, { selected }) => (
+                        <li {...props}>
+                          <Checkbox
+                            checked={selected}
+                            style={{ marginRight: 8 }}
+                          />
+                          <ListItemText primary={option} />
+                        </li>
+                      )}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="Select Languages"
+                          variant="outlined"
+                          autoFocus
+                        />
+                      )}
+                      componentsProps={{
+                        paper: {
+                          sx: {
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            flexDirection: 'row',
+                            gap: '10px',
+                            padding: '10px'
+                          }
+                        },
+                        popper: {
+                          sx: {
+                            width: 'auto'
+                          }
+                        }
+                      }}
+                    />
+                  </Toolbar>
+                </div>
+              </DialogContent>
+              <DialogActions>
+                {/* <Button onClick={handleDialogClose}>Cancel</Button> */}
+                <Button onClick={handleDialogClose} className="btn_confirm">Confirm</Button>
+              </DialogActions>
+            </Dialog>
+          </Toolbar>
+
+      {/* dialog end  */}
+
+
+
+
+      <Toolbar>
+      <Dialog open={formatDialogOpen} onClose={handleFormatDialogClose} className="multilang_dialog">
+              <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
+              <DialogTitle>Select Languages</DialogTitle>
+              <button onClick={handleFormatDialogClose}>X</button>
+              </div>
+          
+              <DialogContent className="dialog_content">
+                
+                  <div class="fileformat">
+                    <div class="format-box">
+                      <h3>Office</h3>
+                      <div class="file-list">
+                        <div><span class="extdoc">pages</span></div>
+                        <div><span class="extdoc">doc</span></div>
+                        <div><span class="extdoc">dot</span></div>
+                        <div><span class="extdoc">docx</span></div>
+                        <div><span class="extdoc">docm</span></div>
+                        <div><span class="extdoc">dotx</span></div>
+                        <div><span class="extdoc">dotm</span></div>
+                        <div><span class="extdoc">rtf</span></div>
+                        <div><span class="extdoc">odt</span></div>
+                        <div><span class="extdoc">ott</span></div>
+                        <div><span class="extpdf">pdf</span></div>
+                        <div><span class="extxls">numbers</span></div>
+                        <div><span class="exttxt">txt</span></div>
+                        <div><span class="extxls">xls</span></div>
+                        <div><span class="extxls">xlt</span></div>
+                        <div><span class="extxls">xlsx</span></div>
+                        <div><span class="extxls">xlsm</span></div>
+                        <div><span class="extxls">xltx</span></div>
+                        <div><span class="extxls">xltm</span></div>
+                        <div><span class="extxls">ods</span></div>
+                        <div><span class="extxls">ots</span></div>
+                        <div><span class="extxls">tsv</span></div>
+                        <div><span class="extppt">key</span></div>
+                        <div><span class="extppt">ppt</span></div>
+                        <div><span class="extppt">pps</span></div>
+                        <div><span class="extppt">pot</span></div>
+                        <div><span class="extppt">pptx</span></div>
+                        <div><span class="extppt">pptm</span></div>
+                        <div><span class="extppt">ppsx</span></div>
+                        <div><span class="extppt">ppsm</span></div>
+                        <div><span class="extppt">potx</span></div>
+                        <div><span class="extppt">potm</span></div>
+                        <div><span class="extppt">odp</span></div>
+                        <div><span class="extppt">otp</span></div>
+                        <div><span class="extxml">xml</span></div>
+                        <div><span class="extzip">zip</span></div>
+                      </div>
+                    </div>
+                    <div class="format-box">
+                      <h3>Web</h3>
+                      <div class="file-list">
+                        <div><span class="exthtm">htm</span></div>
+                        <div><span class="exthtm">html</span></div>
+                        <div><span class="exthtm">xhtml</span></div>
+                        <div><span class="extxml">xml</span></div>
+                        <div><span class="extxml">dtd</span></div>
+                        <div><span class="extxml">json</span></div>
+                        <div><span class="extxml">jsont</span></div>
+                        <div><span class="extxml">jsont2</span></div>
+                        <div><span class="extxml">yaml</span></div>
+                        <div><span class="extxml">yml</span></div>
+                        <div><span class="extxml">md</span></div>
+                      </div>
+                    </div>
+                    <div class="format-box">
+                      <h3>Scanned Files</h3>
+                      <div class="file-list">
+                        <div><span class="extpdf">pdf</span></div>
+                        <div><span class="extimg">bmp</span></div>
+                        <div><span class="extimg">png</span></div>
+                        <div><span class="extimg">gif</span></div>
+                        <div><span class="extimg">jpeg</span></div>
+                        <div><span class="extimg">jpg</span></div>
+                        <div><span class="extimg">jfif</span></div>
+                        <div><span class="extimg">tiff</span></div>
+                      </div>
+                    </div>
+                    <div class="format-box">
+                      <h3>Interchange Formats</h3>
+                      <div class="file-list">
+                        <div><span class="extxif">xliff</span></div>
+                        <div><span class="extxif">sdlxliff</span></div>
+                        <div><span class="exttmx">tmx</span></div>
+                        <div><span class="extttx">ttx</span></div>
+                        <div><span class="extxlf">xlf</span></div>
+                      </div>
+                    </div>
+                    <div class="format-box">
+                      <h3>Desktop Publishing</h3>
+                      <div class="file-list">
+                        <div><span class="extmif">mif</span></div>
+                        <div><span class="extidd">idml</span></div>
+                        <div><span class="exticml">icml</span></div>
+                        <div><span class="extxml">xml</span></div>
+                        <div><span class="extdit">dita</span></div>
+                      </div>
+                    </div>
+                    <div class="format-box">
+                      <h3>Localization</h3>
+                      <div class="file-list">
+                        <div><span class="extpro">properties</span></div>
+                        <div><span class="extres">resx</span></div>
+                        <div><span class="extxml">xml</span></div>
+                        <div><span class="extxml">sxml</span></div>
+                        <div><span class="extxml">txml</span></div>
+                        <div><span class="extdit">dita</span></div>
+                        <div><span class="extxml">Android xml</span></div>
+                        <div><span class="extstr">strings</span></div>
+                        <div><span class="extsbv">sbv</span></div>
+                        <div><span class="extsrt">srt</span></div>
+                        <div><span class="extvtt">vtt</span></div>
+                        <div><span class="extwix">wix</span></div>
+                        <div><span class="extpo">po</span></div>
+                        <div><span class="extg">g</span></div>
+                        <div><span class="exts">QT linguist ts</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+              </DialogContent>
+              <DialogActions>
+                {/* <Button onClick={handleDialogClose}>Cancel</Button> */}
+                {/* <Button onClick={handleDialogClose} className="btn_confirm">Confirm</Button> */}
+              </DialogActions>
+            </Dialog>
+      </Toolbar>
           <Paper
             className="drag_upload"
             variant="outlined"
@@ -463,7 +594,7 @@ export default function CatTool() {
         </form>
         <Toolbar className="form_bottom_bar">
           <Typography variant="body1">
-            Matecat supports 80 file formats and Google drive files
+            Matecat supports <Link><span onClick={openFormatDialog}>80 file formats</span></Link> and <Link>Google drive</Link> files
           </Typography>
           <Button type="submit" variant="contained" color="primary">
             Analyze

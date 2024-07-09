@@ -6,14 +6,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import Editor from './Dashboard/Editor';
 import Footer from './Dashboard/Footer';
+import NewFooter from './Dashboard/NewFooter';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
       <CatTool/>
-      {/* <Editor/>
-      <Footer/> */}
+      {/* <Editor/> */}
+      {/* <Footer/> */}
+      <NewFooter/>
 </div>
   );
 }
