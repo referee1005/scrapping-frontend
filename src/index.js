@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 const root = document.getElementById('root');
 ReactDOM.render(
   <React.StrictMode>
