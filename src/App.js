@@ -10,10 +10,15 @@ function App() {
   return (
     <div className="App"> 
       <Navbar/>
-      <CatTool/>
-      {/* <Editor/> */}
-      {/* <Footer/> */}
-      <NewFooter/>
+      {/* <CatTool/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={CatTool}></Route>
+          <Route path="/translate" Component={Editor}></Route>
+        </Routes>
+      </BrowserRouter>
+      {/* <Editor/>
+      <Footer/> */}
 </div>
   );
 }
