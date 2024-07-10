@@ -10,10 +10,6 @@ import CatTool from "./Dashboard/CatTool";
 import FooterShort from "./Dashboard/FooterShort";
 import Analyze from "./Dashboard/Analyze";
 import ChatBot from "./components/ChatBot";
-<<<<<<< HEAD
-import QualityReport from "./components/QualityReport";
-=======
->>>>>>> 1b0520cbf83c3790df163cfb9846ae461e1fd3af
 
 function App() { 
   return (
