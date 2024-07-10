@@ -89,7 +89,7 @@ header.header_bar .navigation a.button_white {
 }
 
 .cat_tool_desc {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .cat_tool_desc h3 {
@@ -143,7 +143,7 @@ header.header_bar .navigation a.button_white {
   position: relative;
   border: 1px dashed #ccc !important;
   margin: 18px 22px;
-  min-height: 200px;
+  min-height: 150px;
   border-radius: 4px;
   background: #fff !important;
   display: flex;
@@ -798,4 +798,10 @@ div#target-language ul li span {
 div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] span.code_lang {
   background-color: #fff;
   color: #002b5a;
+}
+
+img.switch_btn {
+  max-width: 20px;
+  margin-top: 26px;
+  opacity: 0.5;
 }
