@@ -11,7 +11,7 @@ import Analyze from "./Dashboard/Analyze";
 import ChatBot from "./components/ChatBot";
 import QualityReport from "./components/QualityReport";
 
-function App() {
+function App() { 
   return (
     <div className="App">
       <Navbar />
