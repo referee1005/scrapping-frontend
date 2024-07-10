@@ -805,3 +805,8 @@ img.switch_btn {
   margin-top: 26px;
   opacity: 0.5;
 }
+
+.warning_dialog .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper {
+    height: auto;
+    max-width: max-content;
+}
