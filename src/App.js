@@ -9,6 +9,7 @@ import CatTool from "./Dashboard/CatTool";
 // import { Container } from "@mui/material";
 import FooterShort from "./Dashboard/FooterShort";
 import Analyze from "./Dashboard/Analyze";
+import ChatBot from "./components/ChatBot";
 
 function App() { 
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/analyze" Component={Analyze}></Route>
             <Route path="/translate" Component={Editor}></Route>
           </Routes>
+          <ChatBot/>
         {/* </Container> */}
         <NewFooter />
       </BrowserRouter>
