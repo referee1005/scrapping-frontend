@@ -23,6 +23,7 @@ import {
   Popper,
   ListItemText,
   Checkbox,
+  Tooltip,
   Link
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
@@ -32,6 +33,7 @@ import Chip from "@mui/material/Chip";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBarTabs from "../SideBarTabs";
 import { styled } from "@mui/system";
+import InfoTooltip from "../components/infoTooltip";
 // import SwitchButton from "../components/SwitchButton"
 
 const CustomPopper = styled(Popper)({
@@ -339,7 +341,8 @@ setFormatDialogOpen(true)
 
             <FormGroup className="form_group">
               <Typography variant="body1" gutterBottom>
-                TM & Glossary
+                TM & Glossary 
+                <InfoTooltip/>
               </Typography>
               <Autocomplete
                 disablePortal
@@ -380,7 +383,9 @@ setFormatDialogOpen(true)
             <Dialog open={dialogOpen} onClose={handleDialogClose} className="multilang_dialog">
               <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
               <DialogTitle>Select Languages</DialogTitle>
-              <button onClick={closeDialog}>X</button>
+              <button onClick={closeDialog}>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><g clip-path="url(#a)"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 7l10 10M7 17L17 7"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+              </button>
               </div>
           
               <DialogContent className="dialog_content">
@@ -400,10 +405,10 @@ setFormatDialogOpen(true)
                       getOptionLabel={(option) => `${option.prelim} - ${option.title}`}
                       renderOption={(props, option, { selected }) => (
                         <li {...props}>
-                          <Checkbox
-                            checked={selected}
-                            style={{ marginRight: 8 }}
-                          />
+                         <Checkbox
+                      checked={selectedLanguages.some(lang => lang.title === option.title)}
+                      style={{ marginRight: 8 }}
+                    />
                           <ListItemText
             primary={
               <span>
@@ -481,7 +486,7 @@ setFormatDialogOpen(true)
       <Dialog open={formatDialogOpen} onClose={handleFormatDialogClose} className="multilang_dialog">
               <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
               <DialogTitle>Select Languages</DialogTitle>
-              <button onClick={handleFormatDialogClose}>X</button>
+              <button onClick={handleFormatDialogClose}><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><g clip-path="url(#a)"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 7l10 10M7 17L17 7"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg></button>
               </div>
           
               <DialogContent className="dialog_content">
