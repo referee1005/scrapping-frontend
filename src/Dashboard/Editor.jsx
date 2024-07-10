@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Footer from "./Footer";
 import TranslateFooter from "./TranslateFooter";
-import { Typography } from "antd";
+// import { Typography } from "antd";
 
 function Editor() {
   const [checked, setChecked] = React.useState([]);

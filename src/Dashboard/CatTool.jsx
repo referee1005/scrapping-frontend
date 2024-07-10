@@ -394,9 +394,11 @@ setFormatDialogOpen(true)
                           <ListItemText primary={option} />
                         </li>
                       )}
+                      PopperComponent={(props) => <Popper {...props} id="target-language" placement='bottom'></Popper>}
                       renderInput={(params) => (
                         <TextField
                           {...params}
+                          className="selected-lang"
                           label="Select Languages"
                           variant="outlined"
                           autoFocus
@@ -414,7 +416,7 @@ setFormatDialogOpen(true)
                         },
                         popper: {
                           sx: {
-                            width: 'auto'
+                            width: 'auto',
                           }
                         }
                       }}
