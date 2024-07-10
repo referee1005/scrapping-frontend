@@ -75,7 +75,7 @@ export default function CustomizedTables() {
   return (
     <TableContainer
       component={Paper}
-      sx={{ marginLeft: "-90px", width: "1370px" }}
+      // sx={{ marginLeft: "-90px" }}
     >
       <Table sx={{ minWidth: 900 }} ariaLabel="customized table">
         <TableHead>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Grid } from "@mui/material";
+import { Typography, Box, Grid, Container } from "@mui/material";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Table from "../components/Table";
 import { styled } from "@mui/material/styles";
@@ -17,7 +17,8 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
 }));
 const Analyze = () => {
   return (
-    <Box sx={{ marginTop: "40px", width: "1280px" }}>
+    <Container>
+    <Box sx={{ marginTop: "40px"}}>
       <Grid
         rowSpacing={1}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
@@ -28,7 +29,7 @@ const Analyze = () => {
             sx={{
               backgroundColor: "#eaebee",
               height: "230px",
-              marginLeft: "-100px",
+              // marginLeft: "-100px",
             }}
           >
             <Grid container>
@@ -167,6 +168,7 @@ const Analyze = () => {
         {/* <img src="live_chat.png" width={60} style={{ position: 'absolute',bottom:"0",right:"0" }} alt="" /> */}
       </Grid>
     </Box>
+    </Container>
   );
 };
 
