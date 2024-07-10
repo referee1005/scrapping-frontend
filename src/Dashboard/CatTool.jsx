@@ -55,11 +55,108 @@ const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
 }));
 
 const languages = [
-  'English', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Korean', 'Russian', 'Italian', 'Portuguese',
-  'Arabic', 'Hindi', 'Bengali', 'Punjabi', 'Javanese', 'Malay', 'Vietnamese', 'Telugu', 'Marathi', 'Tamil',
-  'Urdu', 'Turkish', 'Persian', 'Polish', 'Ukrainian', 'Romanian', 'Dutch', 'Greek', 'Czech', 'Swedish',
-  'Hungarian', 'Serbian', 'Belarusian', 'Finnish', 'Slovak', 'Danish', 'Norwegian', 'Bulgarian', 'Croatian', 'Lithuanian',
-  'Slovenian', 'Latvian', 'Estonian', 'Maltese', 'Icelandic', 'Luxembourgish', 'Macedonian', 'Albanian', 'Bosnian', 'Georgian'
+  { prelim: 'en-US', title: 'English (USA)' },
+  { prelim: 'en-GB', title: 'English (UK)' },
+  { prelim: 'fr-FR', title: 'French (France)' },
+  { prelim: 'fr-CA', title: 'French (Canada)' },
+  { prelim: 'es-ES', title: 'Spanish (Spain)' },
+  { prelim: 'es-MX', title: 'Spanish (Mexico)' },
+  { prelim: 'de-DE', title: 'German (Germany)' },
+  { prelim: 'it-IT', title: 'Italian (Italy)' },
+  { prelim: 'pt-PT', title: 'Portuguese (Portugal)' },
+  { prelim: 'pt-BR', title: 'Portuguese (Brazil)' },
+  { prelim: 'ru-RU', title: 'Russian (Russia)' },
+  { prelim: 'zh-CN', title: 'Chinese (Simplified, China)' },
+  { prelim: 'zh-TW', title: 'Chinese (Traditional, Taiwan)' },
+  { prelim: 'ja-JP', title: 'Japanese (Japan)' },
+  { prelim: 'ko-KR', title: 'Korean (South Korea)' },
+  { prelim: 'ar-SA', title: 'Arabic (Saudi Arabia)' },
+  { prelim: 'hi-IN', title: 'Hindi (India)' },
+  { prelim: 'bn-BD', title: 'Bengali (Bangladesh)' },
+  { prelim: 'pa-IN', title: 'Punjabi (India)' },
+  { prelim: 'fa-IR', title: 'Persian (Iran)' },
+  { prelim: 'ur-PK', title: 'Urdu (Pakistan)' },
+  { prelim: 'id-ID', title: 'Indonesian (Indonesia)' },
+  { prelim: 'ms-MY', title: 'Malay (Malaysia)' },
+  { prelim: 'vi-VN', title: 'Vietnamese (Vietnam)' },
+  { prelim: 'th-TH', title: 'Thai (Thailand)' },
+  { prelim: 'tr-TR', title: 'Turkish (Turkey)' },
+  { prelim: 'pl-PL', title: 'Polish (Poland)' },
+  { prelim: 'nl-NL', title: 'Dutch (Netherlands)' },
+  { prelim: 'sv-SE', title: 'Swedish (Sweden)' },
+  { prelim: 'da-DK', title: 'Danish (Denmark)' },
+  { prelim: 'fi-FI', title: 'Finnish (Finland)' },
+  { prelim: 'no-NO', title: 'Norwegian (Norway)' },
+  { prelim: 'hu-HU', title: 'Hungarian (Hungary)' },
+  { prelim: 'cs-CZ', title: 'Czech (Czech Republic)' },
+  { prelim: 'sk-SK', title: 'Slovak (Slovakia)' },
+  { prelim: 'bg-BG', title: 'Bulgarian (Bulgaria)' },
+  { prelim: 'el-GR', title: 'Greek (Greece)' },
+  { prelim: 'he-IL', title: 'Hebrew (Israel)' },
+  { prelim: 'ro-RO', title: 'Romanian (Romania)' },
+  { prelim: 'sr-RS', title: 'Serbian (Serbia)' },
+  { prelim: 'hr-HR', title: 'Croatian (Croatia)' },
+  { prelim: 'sl-SI', title: 'Slovenian (Slovenia)' },
+  { prelim: 'lt-LT', title: 'Lithuanian (Lithuania)' },
+  { prelim: 'lv-LV', title: 'Latvian (Latvia)' },
+  { prelim: 'et-EE', title: 'Estonian (Estonia)' },
+  { prelim: 'is-IS', title: 'Icelandic (Iceland)' },
+  { prelim: 'ga-IE', title: 'Irish (Ireland)' },
+  { prelim: 'mt-MT', title: 'Maltese (Malta)' },
+  { prelim: 'cy-GB', title: 'Welsh (United Kingdom)' },
+  { prelim: 'uk-UA', title: 'Ukrainian (Ukraine)' },
+  { prelim: 'be-BY', title: 'Belarusian (Belarus)' },
+  { prelim: 'kk-KZ', title: 'Kazakh (Kazakhstan)' },
+  { prelim: 'uz-UZ', title: 'Uzbek (Uzbekistan)' },
+  { prelim: 'ky-KG', title: 'Kyrgyz (Kyrgyzstan)' },
+  { prelim: 'mn-MN', title: 'Mongolian (Mongolia)' },
+  { prelim: 'hy-AM', title: 'Armenian (Armenia)' },
+  { prelim: 'ka-GE', title: 'Georgian (Georgia)' },
+  { prelim: 'am-ET', title: 'Amharic (Ethiopia)' },
+  { prelim: 'so-SO', title: 'Somali (Somalia)' },
+  { prelim: 'sw-KE', title: 'Swahili (Kenya)' },
+  { prelim: 'yo-NG', title: 'Yoruba (Nigeria)' },
+  { prelim: 'ig-NG', title: 'Igbo (Nigeria)' },
+  { prelim: 'ha-NE', title: 'Hausa (Niger)' },
+  { prelim: 'zu-ZA', title: 'Zulu (South Africa)' },
+  { prelim: 'xh-ZA', title: 'Xhosa (South Africa)' },
+  { prelim: 'af-ZA', title: 'Afrikaans (South Africa)' },
+  { prelim: 'st-LS', title: 'Sesotho (Lesotho)' },
+  { prelim: 'tn-BW', title: 'Tswana (Botswana)' },
+  { prelim: 'ny-MW', title: 'Chichewa (Malawi)' },
+  { prelim: 'sn-ZW', title: 'Shona (Zimbabwe)' },
+  { prelim: 'rw-RW', title: 'Kinyarwanda (Rwanda)' },
+  { prelim: 'km-KH', title: 'Khmer (Cambodia)' },
+  { prelim: 'lo-LA', title: 'Lao (Laos)' },
+  { prelim: 'my-MM', title: 'Burmese (Myanmar)' },
+  { prelim: 'si-LK', title: 'Sinhala (Sri Lanka)' },
+  { prelim: 'ta-IN', title: 'Tamil (India)' },
+  { prelim: 'te-IN', title: 'Telugu (India)' },
+  { prelim: 'kn-IN', title: 'Kannada (India)' },
+  { prelim: 'ml-IN', title: 'Malayalam (India)' },
+  { prelim: 'mr-IN', title: 'Marathi (India)' },
+  { prelim: 'gu-IN', title: 'Gujarati (India)' },
+  { prelim: 'or-IN', title: 'Odia (India)' },
+  { prelim: 'as-IN', title: 'Assamese (India)' },
+  { prelim: 'ne-NP', title: 'Nepali (Nepal)' },
+  { prelim: 'bo-CN', title: 'Tibetan (China)' },
+  { prelim: 'dz-BT', title: 'Dzongkha (Bhutan)' },
+  { prelim: 'ti-ET', title: 'Tigrinya (Ethiopia)' },
+  { prelim: 'tg-TJ', title: 'Tajik (Tajikistan)' },
+  { prelim: 'tk-TM', title: 'Turkmen (Turkmenistan)' },
+  { prelim: 'az-AZ', title: 'Azerbaijani (Azerbaijan)' },
+  { prelim: 'ku-TR', title: 'Kurdish (Turkey)' },
+  { prelim: 'kmr-TR', title: 'Kurdish (Kurmanji, Turkey)' },
+  { prelim: 'lb-LU', title: 'Luxembourgish (Luxembourg)' },
+  { prelim: 'sm-WS', title: 'Samoan (Samoa)' },
+  { prelim: 'to-TO', title: 'Tongan (Tonga)' },
+  { prelim: 'fj-FJ', title: 'Fijian (Fiji)' },
+  { prelim: 'mi-NZ', title: 'Maori (New Zealand)' },
+  { prelim: 'gn-PY', title: 'Guarani (Paraguay)' },
+  { prelim: 'ay-BO', title: 'Aymara (Bolivia)' },
+  { prelim: 'qu-PE', title: 'Quechua (Peru)' },
+  { prelim: 'na-NR', title: 'Nauruan (Nauru)' },
+  { prelim: 'pap-AW', title: 'Papiamento (Aruba)' }
 ];
 
 export default function CatTool() {
@@ -211,7 +308,7 @@ export default function CatTool() {
 
   const handleChange = (event, newValue) => {
     setSelectedLanguages(newValue);
-    setInputValue(newValue.length > 1 ? `${newValue.length} languages selected` : newValue.join(', '));
+    setInputValue(newValue.length > 1 ? `${newValue.length} languages selected` : (newValue[0] ? `${newValue[0].prelim} - ${newValue[0].title}` : ''));
   };
 
   const [from, setFrom] = useState("");
@@ -257,6 +354,7 @@ setFormatDialogOpen(true)
   const handleFormatDialogClose=()=>{
     setFormatDialogOpen(false)
   }
+  const getOptionLabel = (option) =>  ` ${option.prelim} - ${option.title}`;
   return (
     <Container>
       <Toolbar className="cat_tool_desc">
@@ -286,9 +384,24 @@ setFormatDialogOpen(true)
                 className="search_lang"
                 disablePortal
                 id="combo-box-demo"
-                options={top100Films}
+                options={languages}
                 onChange={handleFromLanguageChange}
-                renderInput={(params) => <TextField {...params} />}
+                getOptionLabel={getOptionLabel}
+                renderInput={(params) => <TextField {...params} label="Select Language" variant="outlined" />}
+                PopperComponent={(props) => (
+                  <Popper {...props} placement='bottom-start' style={{ width: 'auto', minWidth: '300px' }} />
+                )}
+                renderOption={(props, option, { selected }) => (
+                  <li {...props}>
+                    <ListItemText
+      primary={
+        <span>
+          <span className="code_lang" style={{ fontWeight: 'bold' }}>{option.prelim}</span>  {option.title}
+        </span>
+      }
+    />
+                  </li>
+                )}
               />
             </FormGroup>
 
@@ -384,14 +497,20 @@ setFormatDialogOpen(true)
                       onChange={handleChange}
                       options={languages}
                       disableCloseOnSelect
-                      getOptionLabel={(option) => option}
+                      getOptionLabel={(option) => `${option.prelim} - ${option.title}`}
                       renderOption={(props, option, { selected }) => (
                         <li {...props}>
                           <Checkbox
                             checked={selected}
                             style={{ marginRight: 8 }}
                           />
-                          <ListItemText primary={option} />
+                          <ListItemText
+            primary={
+              <span>
+                <span className="code_lang" style={{ fontWeight: 'bold' }}>{option.prelim}</span>  {option.title}
+              </span>
+            }
+          />
                         </li>
                       )}
                       PopperComponent={(props) => <Popper {...props} id="target-language" placement='bottom'></Popper>}
