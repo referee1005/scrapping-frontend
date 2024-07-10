@@ -459,8 +459,7 @@ setFormatDialogOpen(true)
 
 
       {/* error dialog start  */}
-
-          
+  
       <Toolbar>
             <Dialog open={singleLanguageDialogOpen} onClose={errorDialogClose} className="multilang_dialog warning_dialog">
               <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
@@ -479,16 +478,12 @@ setFormatDialogOpen(true)
           </Toolbar>
       {/* error dialog end  */}
 
-
-
-
       <Toolbar>
       <Dialog open={formatDialogOpen} onClose={handleFormatDialogClose} className="multilang_dialog">
               <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
               <DialogTitle>Select Languages</DialogTitle>
               <button onClick={handleFormatDialogClose}><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><g clip-path="url(#a)"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 7l10 10M7 17L17 7"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg></button>
               </div>
-          
               <DialogContent className="dialog_content">
                 
                   <div class="fileformat">

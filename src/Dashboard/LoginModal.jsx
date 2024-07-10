@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import {
     Container,
     Toolbar,
@@ -26,12 +27,18 @@ import {
     Link,
     Grid
   } from "@mui/material";
+  import { ForgotPassModal } from './ForgotPassModal';
 
 export const LoginModal = ({ open, handleClose }) => {
-    const gridItemStyle = {
-        borderRight: '1px solid #ccc', // Add border right style
-        paddingRight: '2px', // Adjust padding as needed
-      };
+    const [forgotPassModal,setForgotPassModal]=useState(false)
+    const handleForgotPassModal=()=>{
+        console.log("dgggg")
+        setForgotPassModal(true)
+        handleClose(); 
+    }
+    const closeForgotModal=()=>{
+        setForgotPassModal(false)
+    }
   return (
     <Toolbar>
             <Dialog open={open} onClose={handleClose} className="multilang_dialog login-Modal">
@@ -69,12 +76,13 @@ export const LoginModal = ({ open, handleClose }) => {
                             <span class="button-loader "></span> Sign in 
                         </a>
                         <br/>
-                        <span class="forgot-password">Forgot password?</span>
+                        <span class="forgot-password" onClick={handleForgotPassModal}>Forgot password?</span>
                     </Toolbar>
                 </Toolbar>
             </Toolbar>
           
             </Dialog>
+            <ForgotPassModal open={forgotPassModal} handleClose={closeForgotModal}/>
           </Toolbar>
   )
 }
