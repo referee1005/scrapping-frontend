@@ -170,6 +170,7 @@ export default function CatTool() {
   const autocompleteRef = useRef(null);
   const [autocompleteOpen, setAutocompleteOpen] = useState(false);
   const [selectedFromLanguage, setSelectedFromLanguage] = useState(null);
+  const [singleLanguageDialogOpen, setSingleLanguageDialogOpen] = useState(false);
 
   useEffect(() => {
     if (dialogOpen) {
@@ -182,7 +183,7 @@ export default function CatTool() {
 
   const handleChange = (event, newValue) => {
     setSelectedLanguages(newValue);
-    setInputValue(newValue.length > 1 ? `${newValue.length} languages selected` : (newValue[0] ? `${newValue[0].prelim} - ${newValue[0].title}` : ''));
+    setInputValue(newValue.length > 1 ? `${newValue.length} languages selected` : (newValue[0] ? ` ${newValue[0].title}` : ''));
   };
 
   const [from, setFrom] = useState("");
@@ -227,12 +228,14 @@ setFormatDialogOpen(true)
   const handleFormatDialogClose=()=>{
     setFormatDialogOpen(false)
   }
-  const getOptionLabel = (option) =>  ` ${option.prelim} - ${option.title}`;
+  const getOptionLabel = (option) =>  ` ${option.title}`;
 
 
 
   const handleSwitchLanguage = () => {
-    if (selectedFromLanguage && selectedLanguages.length === 1) {
+    if (selectedFromLanguage && selectedLanguages.length > 1) {
+      setSingleLanguageDialogOpen(true);
+    } else if (selectedFromLanguage && selectedLanguages.length === 1) {
       const tempFromLanguage = { ...selectedFromLanguage };
       const tempToLanguage = { ...selectedLanguages[0] };
       
@@ -240,10 +243,12 @@ setFormatDialogOpen(true)
       setSelectedLanguages([tempFromLanguage]); // Update 'To' with 'From' language
   
       // Update inputValue with swapped language
-      setInputValue(`${tempFromLanguage.prelim} - ${tempFromLanguage.title}`);
+      setInputValue(`${tempFromLanguage.title}`);
     }
   };
-  console.log(selectedFromLanguage, selectedLanguages, "dhdhdhhdhdhdhdhdhdhd")
+  const errorDialogClose=()=>{
+    setSingleLanguageDialogOpen(false)
+  }
   return (
     <Container>
       <Toolbar className="cat_tool_desc">
@@ -446,6 +451,28 @@ setFormatDialogOpen(true)
           </Toolbar>
 
       {/* dialog end  */}
+
+
+      {/* error dialog start  */}
+
+          
+      <Toolbar>
+            <Dialog open={singleLanguageDialogOpen} onClose={errorDialogClose} className="multilang_dialog warning_dialog">
+              <div style={{display:'flex',justifyContent:'space-between'}} className="header_top">
+              <DialogTitle>Warning</DialogTitle>
+              <button onClick={errorDialogClose}>X</button>
+              </div>
+          
+              <DialogContent className="dialog_content">
+                      <p>Cannot swap languages when multiple target languages are selected!</p>
+              </DialogContent>
+              <DialogActions>
+                {/* <Button onClick={handleDialogClose}>Cancel</Button> */}
+                <Button onClick={errorDialogClose}  className="btn_confirm">ok</Button>
+              </DialogActions>
+            </Dialog>
+          </Toolbar>
+      {/* error dialog end  */}
 
 
 
