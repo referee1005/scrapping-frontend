@@ -774,6 +774,7 @@ ul.MuiAutocomplete-listbox li {
   font-weight: normal;
   border: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 div#target-language ul {
@@ -1119,3 +1120,36 @@ img.switch_btn {
 =======
 }
 >>>>>>> d42c33b (fix style errors)
+=======
+}
+
+div#target-language ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] {
+    color: rgb(255, 255, 255);
+    background: rgb(0, 43, 90);
+    border-radius: 2px;
+}
+
+div#target-language ul li .css-tlelie-MuiListItemText-root {
+    order: 1;
+}
+
+div#target-language ul li .MuiCheckbox-root {
+    order: 2;
+    padding: 0;
+    margin: 0 !important;
+    opacity: 0;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] span.MuiButtonBase-root.MuiCheckbox-root {
+    opacity: 1;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] span.MuiButtonBase-root.MuiCheckbox-root * {
+    fill: #fff;
+}
+>>>>>>> e0fed50 (design updates)
