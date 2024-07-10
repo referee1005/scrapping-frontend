@@ -10,7 +10,7 @@ import CatTool from "./Dashboard/CatTool";
 import FooterShort from "./Dashboard/FooterShort";
 import Analyze from "./Dashboard/Analyze";
 
-function App() {
+function App() { 
   return (
     <div className="App">
       <Navbar />
