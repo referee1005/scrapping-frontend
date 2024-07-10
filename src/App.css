@@ -1030,3 +1030,42 @@ img.switch_btn {
   text-decoration: underline;
   color: #4184c4;
 }
+
+.forgot_pass-content input {
+  width: 97%;
+  padding: .7em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff !important;
+  outline: none;
+}
+.forgot_pass-content{
+  display: inline-block;
+  padding: 30px 128px 47px;
+}
+.send-btn{
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+.send-btn button {
+  padding: 7px 46px;
+  background: #09c;
+  color: #fff;
+}
+.back-to-login{
+  display: flex;
+  justify-content: end;
+}
+.back-to-login p{
+  cursor: pointer;
+  text-decoration: underline;
+  color: #4184c4;
+}
