@@ -719,6 +719,7 @@ ul.MuiAutocomplete-listbox li {
   font-weight: 800;
 }
 .analyse-item1 {
+<<<<<<< HEAD
   background-color: #fff;
   border-left: 1px solid #d9e0e8;
 }
@@ -729,6 +730,19 @@ ul.MuiAutocomplete-listbox li {
 }
 .color1 {
   visibility: hidden;
+=======
+  background-color: #FFF;
+  border-left: 1px solid #d9e0e8;
+}
+.color{
+  background-color: #eeeee5;
+  border-radius: 1px;
+  visibility:visible;
+}
+.color1{
+
+  visibility:hidden;
+>>>>>>> d42c33b (fix style errors)
 }
 .analyse-item1 * {
   font-size: 16px;
@@ -759,6 +773,7 @@ ul.MuiAutocomplete-listbox li {
 .analyse-item1:first-child > div:first-child {
   font-weight: normal;
   border: none;
+<<<<<<< HEAD
 }
 
 div#target-language ul {
@@ -1101,3 +1116,6 @@ img.switch_btn {
   font-size: 16px;
   font-family: Calibri, Arial, Helvetica, sans-serif;
 }
+=======
+}
+>>>>>>> d42c33b (fix style errors)
