@@ -22,7 +22,7 @@ function App() {
             <Route path="/translate" Component={Editor}></Route>
           </Routes>
         {/* </Container> */}
-        <FooterShort />
+        <NewFooter />
       </BrowserRouter>
     </div>
   );
