@@ -653,3 +653,92 @@ background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !imp
 .cat_tool_desc form .MuiToolbar-gutters {
   min-height: auto;
 }
+
+.analyse-item {
+  background-color: #eaebee;
+  border-left: 1px solid #d9e0e8;
+}
+
+.analyse-item * {
+  font-size: 16px;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+.analyse-item > div {
+  height: 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  padding-right: 6px;
+}
+
+.analyse-item > div:first-child {
+  border-bottom: 1px solid #d9e0e8;
+  height: 60px;
+  font-weight: bold;
+}
+
+.analyse-item:first-child {
+  background-color: #f5f6f7;
+  border: none;
+}
+
+.analyse-item:first-child > div:first-child {
+  font-weight: normal;
+  border: none;
+}
+.analyse-item:last-child > div:last-child {
+  font-weight: normal;
+  border: none;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.analyse-item1 {
+  background-color: #FFF;
+  border-left: 1px solid #d9e0e8;
+}
+.color{
+  background-color: #eeeee5;
+  border-radius: 1px;
+  visibility:visible;
+}
+.color1{
+
+  visibility:hidden;
+}
+.analyse-item1 * {
+  font-size: 16px;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+.analyse-item1 > div {
+  height: 36px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  padding-right: 6px;
+  margin-bottom: -18px;
+}
+
+.analyse-item1 > div:first-child {
+  /* border-bottom: 1px solid #d9e0e8; */
+  height: 55px;
+  font-weight: bold;
+}
+
+.analyse-item1:first-child {
+  background-color: #fff;
+  border: none;
+}
+
+.analyse-item1:first-child > div:first-child {
+  font-weight: normal;
+  border: none;
+}

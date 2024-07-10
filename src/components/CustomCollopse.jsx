@@ -20,7 +20,7 @@ const CustomCollapse = ({ title, children }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        marginLeft:'-90px',
+        // marginLeft:'-90px',
       }}
     >
       <Box
