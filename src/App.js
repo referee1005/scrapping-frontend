@@ -9,6 +9,7 @@ import CatTool from "./Dashboard/CatTool";
 import FooterShort from "./Dashboard/FooterShort";
 import Analyze from "./Dashboard/Analyze";
 import ChatBot from "./components/ChatBot";
+import QualityReport from "./components/QualityReport";
 
 function App() {
   return (
