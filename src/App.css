@@ -1097,3 +1097,12 @@ img.switch_btn {
   font-size: 16px;
   font-family: Calibri, Arial, Helvetica, sans-serif;
 }
+.back-to-login {
+  display: flex;
+  justify-content: end;
+}
+.back-to-login p {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #4184c4;
+}
