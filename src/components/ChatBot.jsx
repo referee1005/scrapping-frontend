@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IconButton, Paper, Box, Typography } from '@mui/material';
-import { TextField, InputAdornment, Toolbar,Autocomplete,List, ListItem, ListItemText, Divider  } from '@mui/material';
+import { TextField, InputAdornment, Toolbar, Autocomplete, List, ListItem, ListItemText, Divider } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import RobotIcon from '@mui/icons-material/Android';
@@ -36,66 +36,114 @@ const ChatWidget = () => {
         setActiveChatSection(false);
     };
     return (
-        <Box position="fixed" bottom={16} right={16} zIndex={1000} display="flex" flexDirection="column" alignItems="end">
+        <Box position="fixed" bottom={16} right={16} zIndex={1000} display="flex" flexDirection="column" alignItems="end" className="chatbotModal">
             {open && (
                 <Paper elevation={3} style={{ width: '350px', height: '550px', display: 'flex', flexDirection: 'column', marginBottom: '16px', backgroundColor: '#f5f8fa' }}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" padding={2} bgcolor="#002b5c" color="white">
-                    {activeChatSection && (
-                                <IconButton onClick={handleBack} style={{ color: 'white' }}>
-                                    {/* <ArrowBackIcon /> */}
-                                    <img src="./img/back.svg" alt="" />
-                                </IconButton>
-                            )}
-                    <Typography variant="h6">{activeChatSection ? 'Ilaria, Ambra, Valentina' : 'Help'}</Typography>
+                        {activeChatSection && (
+                            <IconButton onClick={handleBack} style={{ color: 'white' }}>
+                                {/* <ArrowBackIcon /> */}
+                                <img src="./img/back.svg" alt="" className='back_arrow' />
+
+                            </IconButton>
+                        )}
+
+                        {activeChatSection ? <Toolbar className='header_toolbar'>
+                            <div className='avatars_head'>
+                                <ul>
+                                    <li><img src="./img/1.webp" alt="Avatar of Ilaria" /></li>
+                                    <li><img src="./img/2.webp" alt="Avatar of Ilaria" /></li>
+                                    <li><img src="./img/3.webp" alt="Avatar of Ilaria" /></li>
+                                </ul>
+                                <div>
+                                    <h5>Ilaria, Ambra, Valentina <span>We typically reply in a few minutes</span></h5>
+                                </div>
+                            </div>
+                        </Toolbar> : <Typography variant="h6">Help</Typography>
+                        }
                     </Box>
 
                     {/* Chat input section starts */}
 
-                   {!activeChatSection&& ( <Toolbar style={{ display: 'inline-block' }}>
-                        <div className='bot-first' style={{ display: 'inline-block', backgroundColor: '#fff', marginTop: '10px', minWidth: '307px', marginBottom: '20px' }}>
+                    {!activeChatSection && (<Toolbar style={{ display: 'inline-block' }} className='bot_prim'>
+                        <div className='bot-card'>
                             <div style={{ display: 'flex', justifyContent: 'start' }}>
                                 <p style={{ marginTop: '4px' }}>Find Answers Quickly</p>
                             </div>
                             <Autocomplete
-                                    freeSolo
-                                    options={options}
-                                    renderInput={(params) => (
-                                        <TextField
-                                            {...params}
-                                            placeholder='Search Articles'
-                                            variant="outlined"
-                                            fullWidth
-                                            value={input}
-                                            onChange={(e) => setInput(e.target.value)}
-                                            onKeyPress={(e) => {
-                                                if (e.key === 'Enter') handleSend();
-                                            }}
-                                            InputProps={{
-                                                ...params.InputProps,
-                                                startAdornment: (
-                                                    <InputAdornment position="start">
-                                                        <SearchIcon />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        />
-                                    )}
-                                />
+                                freeSolo
+                                options={options}
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        placeholder='Search Articles'
+                                        variant="outlined"
+                                        fullWidth
+                                        value={input}
+                                        onChange={(e) => setInput(e.target.value)}
+                                        onKeyPress={(e) => {
+                                            if (e.key === 'Enter') handleSend();
+                                        }}
+                                        InputProps={{
+                                            ...params.InputProps,
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <SearchIcon />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    />
+                                )}
+                            />
 
                         </div>
 
-                        <Toolbar className='Chat-section'>
+                        <div className='bot-card p-0'>
+                            <Toolbar className='Chat-section '>
 
-                            <p>Your Chats</p>
-                            <img onClick={handleChatSection} style={{ cursor: 'pointer' }} src="./img/edit.svg" alt="" />
+                                <p>Your Chats</p>
+                                <img onClick={handleChatSection} style={{ cursor: 'pointer' }} src="./img/edit.svg" alt="" />
 
-                        </Toolbar>
-                        <Toolbar className='chats'>
-
-
-                        </Toolbar>
+                            </Toolbar>
+                            <Toolbar className='chats' >
+                                {/* <div className='in-chat' onClick={handleChatSection}>
+                                <PersonIcon style={{ marginRight: '8px', alignSelf: 'flex-start', color: '#2196f3' }} />
+                                <p className='user'>Ilaria, Ambra, Valentina</p>
+                                <p className='time'>21 hr ago</p>
+                                </div>
+                                <div className='in-chat-bottom'>
+                                    <p>Got any questions? Check out...</p>
+                                </div> */}
+                                <div onClick={handleChatSection} class="ThreadListItemWrapper" >
+                                    <div class="avatars">
+                                        <div class="chat-head">
+                                            <div class="chat-head-avatar">
+                                                <img src="./img/1.webp" alt="Avatar of Ilaria" />
+                                            </div>
+                                        </div>
+                                        <div class="chat-head">
+                                            <div class="chat-head-avatar">
+                                                <img src="./img/2.webp" alt="Avatar of Ambra" />
+                                            </div>
+                                        </div>
+                                        <div class="chat-head">
+                                            <div class="chat-head-avatar">
+                                                <img src="./img/3.webp" alt="Avatar of Valentina" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="TextWrapper">
+                                        <small class="VizExSmall">
+                                            <span className='names'>Ilaria, Ambra, Valentina</span>
+                                            <span class="hours">23 hr. ago</span>
+                                        </small>
+                                        <div class="bottom_text">Got any questions? Check out the user guide at https://guides.matecat.com/ or ask us anything!</div>
+                                    </div>
+                                </div>
+                            </Toolbar>
+                        </div>
                     </Toolbar>
-                   )}
+                    )}
 
                     {/* Chat input section ends  */}
 
@@ -103,16 +151,18 @@ const ChatWidget = () => {
                     {/* Chat section starts */}
                     {activeChatSection && (
                         <Box display="flex" flexDirection="column" flexGrow={1} justifyContent="space-between">
-                                <List style={{ overflowY: 'auto', flexGrow: 1 }}>
+
+
+                            <List style={{ overflowY: 'auto', flexGrow: 1 }}>
                                 {messages.map((message, index) => (
                                     <ListItem key={index} alignItems="flex-start">
                                         {message.sender === 'user' ? (
                                             <>
                                                 <PersonIcon style={{ marginRight: '8px', alignSelf: 'flex-start', color: '#2196f3' }} />
-                                                <ListItemText
-                                                    primary={message.text}
-                                                    style={{ textAlign: 'left' }}
-                                                />
+                                                
+                                                <Box style={{ backgroundColor: '#ccc', padding: '8px', borderRadius: '8px', maxWidth: '75%' }}>
+                                                    <ListItemText primary={message.text} style={{ textAlign: 'left' }} />
+                                                </Box>
                                             </>
                                         ) : (
                                             <>
@@ -127,7 +177,7 @@ const ChatWidget = () => {
                                 ))}
                             </List>
                             <Divider />
-                            <Box display="flex" padding={2}>
+                            <Box display="flex" padding={2} className="text_field">
                                 <TextField
                                     variant="outlined"
                                     fullWidth
@@ -145,10 +195,6 @@ const ChatWidget = () => {
                         </Box>
                     )}
                     {/* Chat section ends */}
-
-
-                    <Box padding={2}>
-                    </Box>
                 </Paper>
             )}
             <IconButton color="primary" onClick={handleToggle} style={{ backgroundColor: 'rgb(0, 43, 92)', marginBottom: '30px' }} className='chatbot_btn'>
