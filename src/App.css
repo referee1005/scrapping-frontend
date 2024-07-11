@@ -45,15 +45,14 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff; 
+  background: #fff;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1); 
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 40px;
 }
-
 
 /* 05/07/2024 */
 
@@ -126,12 +125,13 @@ header.header_bar .navigation a.button_white {
   font-weight: normal;
 }
 
-.form_group input, .form_group .MuiSelect-select {
+.form_group input,
+.form_group .MuiSelect-select {
   padding: 3px 5px 3px 9px;
   font-size: 16px !important;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  border: 1px solid rgba(34, 36, 38, .15);
+  border: 1px solid rgba(34, 36, 38, 0.15);
   height: 37px;
   box-shadow: inset 0 1px 3px #ddd !important;
   min-width: 120px;
@@ -159,7 +159,7 @@ header.header_bar .navigation a.button_white {
   font-weight: 600;
 }
 
-.drag_upload  p {
+.drag_upload p {
   font-size: 24px;
   text-decoration: underline;
   color: #788190;
@@ -196,7 +196,7 @@ header.header_bar .navigation a.button_white {
 .sidebar_opening button {
   gap: 7px;
   fill: #0055b8;
-  color:#000;
+  color: #000;
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -213,7 +213,8 @@ header.header_bar .navigation a.button_white {
 }
 
 .settings-panel-header .settings-panel-header-logo {
-  background: url(https://www.matecat.com/public/build/images/logo_matecat_small_white.svg) no-repeat;
+  background: url(https://www.matecat.com/public/build/images/logo_matecat_small_white.svg)
+    no-repeat;
   background-position-y: center;
   background-size: contain;
   width: 35px;
@@ -229,27 +230,27 @@ header.header_bar .navigation a.button_white {
   height: 100%;
   max-width: 1024px;
   background-color: #fff;
-  transition: transform .5s ease-in-out !important;
+  transition: transform 0.5s ease-in-out !important;
 }
 
 .form_bottom_bar {
   width: 100%;
 }
 
-.cat_tool_desc form .search_lang .MuiInputBase-formControl  { 
-    padding: 3px 25px 3px 9px !important;
-    font-size: 16px !important;
-    border-radius: 2px;
-    height: 45px !important;
-    box-shadow: none !important;
-    min-width: 160px;
-    max-width: 160px;
-    background: #fff;
-    overflow: hidden;
-    border: 1px solid rgba(34, 36, 38, .15);
-    box-shadow: inset 0 1px 3px #ddd !important;
-  }
-  
+.cat_tool_desc form .search_lang .MuiInputBase-formControl {
+  padding: 3px 25px 3px 9px !important;
+  font-size: 16px !important;
+  border-radius: 2px;
+  height: 45px !important;
+  box-shadow: none !important;
+  min-width: 160px;
+  max-width: 160px;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: inset 0 1px 3px #ddd !important;
+}
+
 .cat_tool_desc form .search_lang .MuiInputBase-formControl fieldset {
   border: none;
   border-radius: 2px;
@@ -262,8 +263,11 @@ header.header_bar .navigation a.button_white {
   background: transparent !important;
 }
 
-
-.cat_tool_desc form .search_lang .MuiInputBase-formControl .MuiAutocomplete-tag {
+.cat_tool_desc
+  form
+  .search_lang
+  .MuiInputBase-formControl
+  .MuiAutocomplete-tag {
   text-wrap: nowrap;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -271,38 +275,42 @@ header.header_bar .navigation a.button_white {
   margin: 5px 0;
 }
 
-.cat_tool_desc form .search_lang .MuiAutocomplete-endAdornment.css-p1olib-MuiAutocomplete-endAdornment {
-    z-index: 1;
+.cat_tool_desc
+  form
+  .search_lang
+  .MuiAutocomplete-endAdornment.css-p1olib-MuiAutocomplete-endAdornment {
+  z-index: 1;
 }
 
 .cat_tool_desc form .search_lang button {
-    background: #fff;
+  background: #fff;
 }
 
 .cat_tool_desc form .search_lang .MuiInputBase-formControl:before {
   display: none;
 }
 
-
 .cat_tool_desc form .search_lang .MuiInputBase-formControl:after {
   display: none;
 }
 
-.cat_tool_desc form input#project-name {border: 1px solid rgba(34, 36, 38, .15);}
+.cat_tool_desc form input#project-name {
+  border: 1px solid rgba(34, 36, 38, 0.15);
+}
 
 .cat_tool_desc form fieldset {
-    border: none;
-    border-radius: 2px;
+  border: none;
+  border-radius: 2px;
 }
 
 .MuiContainer-root {
   max-width: 90% !important;
 }
 
-.multilang_dialog  .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper {
-    width: 100%;
-    max-width: 90%;
-    height: 90vh;
+.multilang_dialog .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper {
+  width: 100%;
+  max-width: 90%;
+  height: 90vh;
 }
 
 .header_top {
@@ -352,8 +360,7 @@ header.header_bar .navigation a.button_white {
   min-width: 40px;
 }
 
-
-.dialog_content  .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault {
+.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault {
   position: relative;
   display: flex;
   padding: 0px 8px;
@@ -366,23 +373,28 @@ header.header_bar .navigation a.button_white {
   justify-content: space-between;
 }
 
-.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault span.MuiChip-label {
+.dialog_content
+  .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault
+  span.MuiChip-label {
   padding-left: 0;
 }
 
-.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault svg {float: right;margin: 0;}
+.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault svg {
+  float: right;
+  margin: 0;
+}
 
 ul.MuiAutocomplete-listbox {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    column-gap: 15px;
-    /* max-width: 90%; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  /* max-width: 90%; */
 }
 
 ul.MuiAutocomplete-listbox li {
-    height: auto;
-    min-height: 40px !important;
+  height: auto;
+  min-height: 40px !important;
 }
 
 .btn_confirm {
@@ -442,149 +454,148 @@ ul.MuiAutocomplete-listbox li {
 }
 
 .fileformat .extdoc {
-background: url(../public/img/matecat_file_icons.png) 6px 0 no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px 0 no-repeat !important;
 }
 
 .fileformat .extppt {
-background: url(../public/img/matecat_file_icons.png) 6px -34px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -34px no-repeat !important;
 }
 
 .fileformat .exthtm {
-background: url(../public/img/matecat_file_icons.png) 6px -70px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -70px no-repeat !important;
 }
 
 .fileformat .extpdf {
-background: url(../public/img/matecat_file_icons.png) 6px -104px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -104px no-repeat !important;
 }
 
 .fileformat .extxls {
-background: url(../public/img/matecat_file_icons.png) 6px -140px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -140px no-repeat !important;
 }
 
 .fileformat .exttxt {
-background: url(../public/img/matecat_file_icons.png) 6px -172px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -172px no-repeat !important;
 }
 
 .fileformat .extxif {
-background: url(../public/img/matecat_file_icons.png) 6px -208px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -208px no-repeat !important;
 }
 
 .fileformat .extttx {
-background: url(../public/img/matecat_file_icons.png) 6px -242px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -242px no-repeat !important;
 }
 
 .fileformat .extitd {
-background: url(../public/img/matecat_file_icons.png) 6px -276px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -276px no-repeat !important;
 }
 
 .fileformat .extxlf {
-background: url(../public/img/matecat_file_icons.png) 6px -310px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -310px no-repeat !important;
 }
 
 .fileformat .extmif {
-background: url(../public/img/matecat_file_icons.png) 6px -342px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -342px no-repeat !important;
 }
 
 .fileformat .extidd {
-background: url(../public/img/matecat_file_icons.png) 6px -378px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -378px no-repeat !important;
 }
 
 .fileformat .extqxp {
-background: url(../public/img/matecat_file_icons.png) 6px -412px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -412px no-repeat !important;
 }
 
 .fileformat .extxml {
-background: url(../public/img/matecat_file_icons.png) 6px -446px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -446px no-repeat !important;
 }
 
 .fileformat .extrcc {
-background: url(../public/img/matecat_file_icons.png) 6px -484px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -484px no-repeat !important;
 }
 
 .fileformat .extres {
-background: url(../public/img/matecat_file_icons.png) 6px -516px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -516px no-repeat !important;
 }
 
 .fileformat .extsgl {
-background: url(../public/img/matecat_file_icons.png) 6px -552px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -552px no-repeat !important;
 }
 
 .fileformat .extsgm {
-background: url(../public/img/matecat_file_icons.png) 6px -584px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -584px no-repeat !important;
 }
 
 .fileformat .extpro {
-background: url(../public/img/matecat_file_icons.png) 6px -618px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -618px no-repeat !important;
 }
 
 .fileformat .extdit {
-background: url(../public/img/matecat_file_icons.png) 6px -652px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -652px no-repeat !important;
 }
 
 .fileformat .exttag {
-background: url(../public/img/matecat_file_icons.png) 6px -686px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -686px no-repeat !important;
 }
 
 .fileformat .exttmx {
-background: url(../public/img/matecat_file_icons.png) 6px -722px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -722px no-repeat !important;
 }
 
 .fileformat .extstr {
-background: url(../public/img/matecat_file_icons.png) 6px -758px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -758px no-repeat !important;
 }
 
 .fileformat .extzip {
-background: url(../public/img/matecat_file_icons.png) 6px -792px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -792px no-repeat !important;
 }
 
 .fileformat .exticml {
-background: url(../public/img/matecat_file_icons.png) 6px -826px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -826px no-repeat !important;
 }
 
 .fileformat .extimg {
-background: url(../public/img/matecat_file_icons.png) 6px -860px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -860px no-repeat !important;
 }
 
 .fileformat .extwix {
-background: url(../public/img/matecat_file_icons.png) 6px -894px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -894px no-repeat !important;
 }
 
 .fileformat .extsrt {
-background: url(../public/img/matecat_file_icons.png) 6px -928px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -928px no-repeat !important;
 }
 
 .fileformat .extsbv {
-background: url(../public/img/matecat_file_icons.png) 6px -1133px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -1133px no-repeat !important;
 }
 
 .fileformat .extvtt {
-background: url(../public/img/matecat_file_icons.png) 6px -1167px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -1167px no-repeat !important;
 }
 
 .fileformat .extpo {
-background: url(../public/img/matecat_file_icons.png) 6px -962px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -962px no-repeat !important;
 }
 
 .fileformat .extg {
-background: url(../public/img/matecat_file_icons.png) 6px -996px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -996px no-repeat !important;
 }
 
 .fileformat .exts {
-background: url(../public/img/matecat_file_icons.png) 6px -0px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -0px no-repeat !important;
 }
 
 .fileformat .extgsli {
-background: url(../public/img/matecat_file_icons.png) 6px -1033px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -1033px no-repeat !important;
 }
 
 .fileformat .extgdoc {
-background: url(../public/img/matecat_file_icons.png) 6px -1070px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -1070px no-repeat !important;
 }
 
 .fileformat .extgsheet {
-background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !important;
+  background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !important;
 }
-
 
 .normal-foo {
   background-color: #eaebee;
@@ -620,7 +631,7 @@ background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !imp
   line-height: 14px;
 }
 
-.normal-foo .footer-body  .side-info {
+.normal-foo .footer-body .side-info {
   margin-top: 4px;
   display: flex;
   align-items: center;
@@ -700,17 +711,16 @@ background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !imp
   font-weight: 800;
 }
 .analyse-item1 {
-  background-color: #FFF;
+  background-color: #fff;
   border-left: 1px solid #d9e0e8;
 }
-.color{
+.color {
   background-color: #eeeee5;
   border-radius: 1px;
-  visibility:visible;
+  visibility: visible;
 }
-.color1{
-
-  visibility:hidden;
+.color1 {
+  visibility: hidden;
 }
 .analyse-item1 * {
   font-size: 16px;

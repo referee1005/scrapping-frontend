@@ -1,9 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Editor from './Dashboard/Editor';
-import Footer from './Dashboard/Footer';
-import NewFooter from './Dashboard/NewFooter';
-import Navbar from './Dashboard/Navbar'
+import translate from "./Dashboard/translate";
+import NewFooter from "./Dashboard/NewFooter";
+import Navbar from "./Dashboard/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CatTool from "./Dashboard/CatTool";
 // import { Container } from "@mui/material";
@@ -16,11 +15,11 @@ function App() {
       <Navbar />
       <BrowserRouter>
         {/* <Container> */}
-          <Routes>
-            <Route path="/" Component={CatTool}></Route>
-            <Route path="/analyze" Component={Analyze}></Route>
-            <Route path="/translate" Component={Editor}></Route>
-          </Routes>
+        <Routes>
+          <Route path="/" Component={CatTool}></Route>
+          <Route path="/analyze" Component={Analyze}></Route>
+          <Route path="/translate" Component={translate}></Route>
+        </Routes>
         {/* </Container> */}
         <FooterShort />
       </BrowserRouter>
