@@ -1069,3 +1069,16 @@ img.switch_btn {
   text-decoration: underline;
   color: #4184c4;
 }
+
+.chatbot_btn {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+}
+.Chat-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 10px;
+}
