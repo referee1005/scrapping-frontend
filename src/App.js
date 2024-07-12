@@ -17,13 +17,13 @@ function App() {
       <Navbar />
       <BrowserRouter>
         {/* <Container> */}
-          <Routes>
-            <Route path="/" Component={CatTool}></Route>
-            <Route path="/analyze" Component={Analyze}></Route>
-            <Route path="/translate" Component={Editor}></Route>
-            <Route path="/report" element={<QualityReport />} />
-          </Routes>
-         <ChatBot/>
+        <Routes>
+          <Route path="/" Component={CatTool}></Route>
+          <Route path="/analyze" Component={Analyze}></Route>
+          <Route path="/translate" Component={Translate}></Route>
+          <Route path="/report" element={<QualityReport />} />
+        </Routes>
+        <ChatBot />
         {/* </Container> */}
         <NewFooter />
       </BrowserRouter>
