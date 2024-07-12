@@ -21,24 +21,14 @@ function App() {
       <Navbar />
       <BrowserRouter>
         {/* <Container> */}
-<<<<<<< HEAD
         <Routes>
           <Route path="/" Component={CatTool}></Route>
           <Route path="/analyze" Component={Analyze}></Route>
           <Route path="/translate" Component={Translate}></Route>
+          <Route path="/manage" Component={Manage}></Route>
           <Route path="/report" element={<QualityReport />} />
         </Routes>
         <ChatBot />
-=======
-          <Routes>
-            <Route path="/" Component={CatTool}></Route>
-            <Route path="/analyze" Component={Analyze}></Route>
-            <Route path="/translate" Component={Editor}></Route>
-            <Route path="/manage" Component={Manage}></Route>
-            {/*<Route path="/" element={<QualityReport />} /> */}
-          </Routes>
-          <ChatBot/>
->>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
         {/* </Container> */}
         <NewFooter />
       </BrowserRouter>
