@@ -851,6 +851,111 @@ export default function CatTool () {
                         <span class='exts'>QT linguist ts</span>
                       </div>
                     </div>
+                    <div>
+                      <span class='extdoc'>doc</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>dot</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>docx</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>docm</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>dotx</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>dotm</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>rtf</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>odt</span>
+                    </div>
+                    <div>
+                      <span class='extdoc'>ott</span>
+                    </div>
+                    <div>
+                      <span class='extpdf'>pdf</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>numbers</span>
+                    </div>
+                    <div>
+                      <span class='exttxt'>txt</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>xls</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>xlt</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>xlsx</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>xlsm</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>xltx</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>xltm</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>ods</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>ots</span>
+                    </div>
+                    <div>
+                      <span class='extxls'>tsv</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>key</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>ppt</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>pps</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>pot</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>pptx</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>pptm</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>ppsx</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>ppsm</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>potx</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>potm</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>odp</span>
+                    </div>
+                    <div>
+                      <span class='extppt'>otp</span>
+                    </div>
+                    <div>
+                      <span class='extxml'>xml</span>
+                    </div>
+                    <div>
+                      <span class='extzip'>zip</span>
+                    </div>
                   </div>
                 </div>
               </DialogContent>
