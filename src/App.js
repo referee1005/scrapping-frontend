@@ -9,12 +9,8 @@ import CatTool from "./Dashboard/CatTool";
 import FooterShort from "./Dashboard/FooterShort";
 import Analyze from "./Dashboard/Analyze";
 import ChatBot from "./components/ChatBot";
-<<<<<<< HEAD
 import QualityReport from "./components/QualityReport";
-=======
 import Manage from "./Dashboard/Manage/Manage";
->>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
-
 function App() {
   return (
     <div className="App">
