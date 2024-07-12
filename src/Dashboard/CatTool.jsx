@@ -24,8 +24,10 @@ import {
   ListItemText,
   Checkbox,
   Tooltip,
-  Link
-} from "@mui/material";
+  Link,
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow }
+ from "@mui/material";
+ import { useNavigate } from 'react-router-dom';
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import UploadIcon from "@mui/icons-material/Upload";
@@ -34,6 +36,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SideBarTabs from "../SideBarTabs";
 import { styled } from "@mui/system";
 import InfoTooltip from "../components/infoTooltip";
+import DeleteIcon from '@mui/icons-material/Delete';
 // import SwitchButton from "../components/SwitchButton"
 
 const CustomPopper = styled(Popper)({
@@ -173,6 +176,9 @@ export default function CatTool() {
   const [autocompleteOpen, setAutocompleteOpen] = useState(false);
   const [selectedFromLanguage, setSelectedFromLanguage] = useState(null);
   const [singleLanguageDialogOpen, setSingleLanguageDialogOpen] = useState(false);
+  const [files, setFiles] = useState([]);
+  const fileInputRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (dialogOpen) {
@@ -192,12 +198,30 @@ export default function CatTool() {
 
   const handleFileDrop = (e) => {
     e.preventDefault();
-    const files = e.dataTransfer.files;
-    console.log(files);
+    const uploadedFiles = Array.from(e.dataTransfer.files);
+    setFiles((prevFiles) => [...prevFiles, ...uploadedFiles]);
+    console.log(uploadedFiles);
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
+  };
+
+  const handleFileChange = (e) => {
+    const uploadedFiles = Array.from(e.target.files);
+    setFiles((prevFiles) => [...prevFiles, ...uploadedFiles]);
+    console.log(uploadedFiles);
+  };
+
+  const handleDelete = (index) => {
+    setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+  };
+  const handleAddMoreFiles = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleClearAll = () => {
+    setFiles([]);
   };
 
   const toggleDrawer = (open) => (event) => {
@@ -251,6 +275,9 @@ setFormatDialogOpen(true)
   const errorDialogClose=()=>{
     setSingleLanguageDialogOpen(false)
   }
+  const handleAnalyzeClick = () => {
+    navigate('/analyze');
+  };
   return (
     <Container>
       <Toolbar className="cat_tool_desc">
@@ -271,6 +298,22 @@ setFormatDialogOpen(true)
        
 
             </FormGroup>
+
+            <FormGroup className="form_group">
+              <Typography variant="body1" gutterBottom>
+                Team
+              </Typography>
+              <Autocomplete
+                disablePortal
+                className="search_lang"
+                id="combo-box-demo"
+                options={[]}
+                renderInput={(params) => <TextField placeholder="Personal" {...params} />}
+              />
+            </FormGroup>
+            
+
+            
 
             <FormGroup className="form_group">
               <Typography variant="body1" gutterBottom>
@@ -350,6 +393,21 @@ setFormatDialogOpen(true)
                 id="combo-box-demo"
                 options={[]}
                 renderInput={(params) => <TextField {...params} />}
+              />
+            </FormGroup>
+
+            
+            <FormGroup className="form_group">
+              <Typography variant="body1" gutterBottom>
+              Project template
+                <InfoTooltip/>
+              </Typography>
+              <Autocomplete
+                disablePortal
+                className="search_lang"
+                id="combo-box-demo"
+                options={[]}
+                renderInput={(params) => <TextField placeholder="Standard" {...params} />}
               />
             </FormGroup>
 
@@ -606,40 +664,82 @@ setFormatDialogOpen(true)
               </DialogActions>
             </Dialog>
       </Toolbar>
-          <Paper
-            className="drag_upload"
-            variant="outlined"
-            elevation={0}
-            onDrop={handleFileDrop}
-            onDragOver={handleDragOver}
+
+
+      <div className="drag-section">
+      <input
+        type="file"
+        id="file-input"
+        style={{ display: 'none' }}
+        multiple
+        onChange={handleFileChange}
+        ref={fileInputRef}
+      />
+      {files.length === 0 ? (
+        <Paper
+          className="drag_upload"
+          variant="outlined"
+          elevation={0}
+          onDrop={handleFileDrop}
+          onDragOver={handleDragOver}
+        >
+          <label htmlFor="file-input">
+            <IconButton component="span">
+              <UploadIcon />
+            </IconButton>
+            <Typography variant="h4">
+              Drop your files to translate them with Matecat
+            </Typography>
+            <Typography variant="body1">or click here to browse</Typography>
+          </label>
+        </Paper>
+      ) : (
+        <div className="img-prop-section">
+          <TableContainer component={Paper}>
+            <Table>
+              <TableBody>
+                {files.map((file, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{file.name}</TableCell>
+                    <TableCell>{(file.size / 1024).toFixed(2)} KB</TableCell>
+                    <TableCell>
+                      <IconButton
+                        color="secondary"
+                        onClick={() => handleDelete(index)}
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleAddMoreFiles}
+            style={{ marginTop: '10px', marginRight: '10px' }}
           >
-            <input
-              type="file"
-              id="file-input"
-              style={{ display: "none" }}
-              multiple
-              onChange={(e) => {
-                const files = e.target.files;
-                // Handle selected files here (e.g., store them in state or perform any other actions)
-                console.log(files);
-              }}
-            />
-            <label htmlFor="file-input">
-              <IconButton component="span">
-                <UploadIcon />
-              </IconButton>
-              <Typography variant="h4">
-                Drop your files to translate them with Matecat
-              </Typography>
-              <Typography variant="body1">or click here to browse</Typography>
-            </label>
-          </Paper>
+            Add More Files
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={handleClearAll}
+            style={{ marginTop: '10px' }}
+          >
+            Clear All
+          </Button>
+        </div>
+      )}
+    </div>
         </form>
         <Toolbar className="form_bottom_bar">
           <Typography variant="body1">
             Matecat supports <Link><span onClick={openFormatDialog}>80 file formats</span></Link> and <Link>Google drive</Link> files
           </Typography>
-          <Button type="submit" variant="contained" color="primary">
+          <Button onClick={handleAnalyzeClick} type="submit" variant="contained" color="primary">
             Analyze
           </Button>
         </Toolbar>

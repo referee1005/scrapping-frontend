@@ -454,3 +454,8 @@
 .sidebar_tabs .settings-panel-row-content .align-center {
     justify-content: center;
 }
+
+.both-btns {
+    display: flex;
+    gap: 10px;
+}

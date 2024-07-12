@@ -10,6 +10,7 @@ import CatTool from "./Dashboard/CatTool";
 import FooterShort from "./Dashboard/FooterShort";
 import Analyze from "./Dashboard/Analyze";
 import ChatBot from "./components/ChatBot";
+import Manage from "./Dashboard/Manage/Manage";
 
 function App() { 
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" Component={CatTool}></Route>
             <Route path="/analyze" Component={Analyze}></Route>
             <Route path="/translate" Component={Editor}></Route>
+            <Route path="/manage" Component={Manage}></Route>
             {/*<Route path="/" element={<QualityReport />} /> */}
           </Routes>
           <ChatBot/>
