@@ -21,9 +21,6 @@ export default function Navbar() {
     <>
         <AppBar position="static" className='header_bar'>
             <Toolbar>
-                {/* <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                <MenuIcon />
-                </IconButton> */}
                 <Toolbar className='logo_branding'>
                     LingoWorld
                 </Toolbar>

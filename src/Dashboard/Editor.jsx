@@ -1,43 +1,43 @@
-import React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Footer from "./Footer";
-import TranslateFooter from "./TranslateFooter";
+import React from 'react'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import Checkbox from '@mui/material/Checkbox'
+import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
+import Footer from './Footer'
+import TranslateFooter from './TranslateFooter'
 // import { Typography } from "antd";
 
-function Editor() {
-  const [checked, setChecked] = React.useState([]);
-  const [editvalue, setValue] = React.useState(-1);
-  const [hover, setHover] = React.useState(null);
+function Editor () {
+  const [checked, setChecked] = React.useState([])
+  const [editvalue, setValue] = React.useState(-1)
+  const [hover, setHover] = React.useState(null)
 
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+  const handleToggle = value => () => {
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
 
     if (currentIndex === -1) {
-      newChecked.push(value);
+      newChecked.push(value)
     } else {
-      newChecked.splice(currentIndex, 1);
+      newChecked.splice(currentIndex, 1)
     }
 
-    setChecked(newChecked);
-  };
+    setChecked(newChecked)
+  }
 
   return (
-    <div style={{ height: "100vh" }}>
-      <div className="landscape">
+    <div style={{ height: '100vh' }}>
+      <div className='landscape'>
         <List
           dense
-          sx={{ width: "100%", maxWidth: "100%", bgcolor: "background.paper" }}
+          sx={{ width: '100%', maxWidth: '100%', bgcolor: 'background.paper' }}
         >
           {[0, 1, 2, 3].map((value, index) => {
-            const labelId = `checkbox-list-secondary-label-${value}`;
+            const labelId = `checkbox-list-secondary-label-${value}`
             return (
               <ListItem
                 key={value}
@@ -49,11 +49,11 @@ function Editor() {
                 <ListItemIcon>
                   {hover === index && (
                     <Checkbox
-                      edge="end"
+                      edge='end'
                       checked={checked.indexOf(value) !== -1}
                       tabIndex={-1}
                       onChange={handleToggle(value)}
-                      inputProps={{ "aria-labelledby": labelId }}
+                      inputProps={{ 'aria-labelledby': labelId }}
                     />
                   )}
                 </ListItemIcon>
@@ -61,21 +61,21 @@ function Editor() {
                   style={
                     editvalue === value
                       ? {
-                          scale: "102%",
+                          scale: '102%',
                           zIndex: 1,
                           border: 1,
-                          borderColor: "black",
-                          borderStyle: "dotted",
-                          background: "white"
+                          borderColor: 'black',
+                          borderStyle: 'dotted',
+                          background: 'white'
                         }
-                      : { background: "#d9e0e8" }
+                      : { background: '#d9e0e8' }
                   }
                 >
                   <Box
-                    component="section"
+                    component='section'
                     sx={{ p: 2 }}
                     onClick={() => {
-                      setValue(value);
+                      setValue(value)
                     }}
                   >
                     {editvalue != value ? (
@@ -109,9 +109,9 @@ function Editor() {
                             <Grid
                               item
                               xs={1}
-                              style={{ verticalAlign: "middle" }}
+                              style={{ verticalAlign: 'middle' }}
                             >
-                              <ArrowForwardIosIcon color="info" cursor />
+                              <ArrowForwardIosIcon color='info' cursor />
                             </Grid>
                           </Grid>
                         </Grid>
@@ -119,17 +119,17 @@ function Editor() {
                         <Grid item xs={6}>
                           <textarea
                             rows={5}
-                            className="textarea"
+                            className='textarea'
                             defaultValue={
                               "Création d'applications BI avec QlikView, Tableau et Power BI pour le marketing, l'acquisition de clients, le CRM, les jeux responsables, les paiements et les finances."
                             }
                           ></textarea>
                         </Grid>
                         <Grid item xs={12}>
-                          <div style={{ float: "right", background: "#09c" }}>
+                          <div style={{ float: 'right', background: '#09c' }}>
                             <Button
-                              variant="contained"
-                              style={{ background: "#09c" }}
+                              variant='contained'
+                              style={{ background: '#09c' }}
                             >
                               TRANSLATED
                             </Button>
@@ -144,13 +144,13 @@ function Editor() {
                   </Box>
                 </div>
               </ListItem>
-            );
+            )
           })}
         </List>
       </div>
       <TranslateFooter />
     </div>
-  );
+  )
 }
 
-export default Editor;
+export default Editor
