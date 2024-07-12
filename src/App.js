@@ -17,6 +17,7 @@ function App() {
       <Navbar />
       <BrowserRouter>
         {/* <Container> */}
+<<<<<<< HEAD
         <Routes>
           <Route path="/" Component={CatTool}></Route>
           <Route path="/analyze" Component={Analyze}></Route>
@@ -24,6 +25,15 @@ function App() {
           <Route path="/report" element={<QualityReport />} />
         </Routes>
         <ChatBot />
+=======
+          <Routes>
+            <Route path="/" Component={CatTool}></Route>
+            <Route path="/analyze" Component={Analyze}></Route>
+            <Route path="/translate" Component={Editor}></Route>
+            <Route path="/report" element={<QualityReport />} />
+          </Routes>
+         {/* <ChatBot/> */}
+>>>>>>> fb3f4836bc87fc3ab6d83204e7680c1c046597bd
         {/* </Container> */}
         <NewFooter />
       </BrowserRouter>

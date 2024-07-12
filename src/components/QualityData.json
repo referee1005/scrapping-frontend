@@ -117,5 +117,101 @@
         "qaTags": ["Automated (1)", "Tag mismatch (1)"],
         "words": 9,
         "mtLabel": "MT"
+    },
+    {
+        "id": "3978154284",
+        "secPerWord": "02''",
+        "pee": "3%",
+        "segmentStatus": "NEW",
+        "sourceText": "Verify the robustness of the AI against adversarial attacks.",
+        "suggestionText": "Verifica la robustezza dell'IA contro gli attacchi avversari.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 13,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154285",
+        "secPerWord": "00''",
+        "pee": "2%",
+        "segmentStatus": "APPROVED",
+        "sourceText": "Provide adequate training data to cover edge cases.",
+        "suggestionText": "Fornisci dati di formazione adeguati per coprire i casi limite.",
+        "translationText": "Fornisci dati di formazione adeguati per coprire i casi limite.",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 11,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154286",
+        "secPerWord": "01''",
+        "pee": "1%",
+        "segmentStatus": "REJECTED",
+        "sourceText": "Implement strong encryption to protect sensitive data.",
+        "suggestionText": "Implementa una crittografia forte per proteggere i dati sensibili.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (2)"],
+        "words": 10,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154287",
+        "secPerWord": "02''",
+        "pee": "3%",
+        "segmentStatus": "NEW",
+        "sourceText": "Ensure compliance with relevant regulations and standards.",
+        "suggestionText": "Assicurati della conformità alle normative e agli standard pertinenti.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 11,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154288",
+        "secPerWord": "00''",
+        "pee": "5%",
+        "segmentStatus": "APPROVED",
+        "sourceText": "Regularly update the training data to improve model accuracy.",
+        "suggestionText": "Aggiorna regolarmente i dati di formazione per migliorare l'accuratezza del modello.",
+        "translationText": "Aggiorna regolarmente i dati di formazione per migliorare l'accuratezza del modello.",
+        "qaTags": ["Automated (1)", "Tag mismatch (2)"],
+        "words": 10,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154289",
+        "secPerWord": "01''",
+        "pee": "2%",
+        "segmentStatus": "REJECTED",
+        "sourceText": "Use robust testing to identify potential vulnerabilities.",
+        "suggestionText": "Utilizza test robusti per identificare potenziali vulnerabilità.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 13,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154290",
+        "secPerWord": "00''",
+        "pee": "3%",
+        "segmentStatus": "NEW",
+        "sourceText": "Implement a comprehensive quality assurance program.",
+        "suggestionText": "Implementa un programma completo di assicurazione della qualità.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 11,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154291",
+        "secPerWord": "02''",
+        "pee": "1%",
+        "segmentStatus": "APPROVED",
+        "sourceText": "Regular audits can help maintain data integrity.",
+        "suggestionText": "Le revisioni regolari possono aiutare a mantenere l'integrità dei dati.",
+        "translationText": "Le revisioni regolari possono aiutare a mantenere l'integrità dei dati.",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 12,
+        "mtLabel": "MT"
     }
 ]
