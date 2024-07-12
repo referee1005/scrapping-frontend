@@ -1484,3 +1484,13 @@ img.back_arrow {
   outline: none;
   opacity: 0.3;
 }
+.translate-bold-font {
+  font-weight: 600;
+  font-size: 16px;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+.translate-font {
+  font-weight: 600;
+  font-size: 16px;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
