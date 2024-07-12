@@ -18,7 +18,7 @@ const Comment = ({ visibleModal }) => {
     <div>
       <Box
         height={150}
-        width={400}
+        width={350}
         marginLeft={'20px'}
         my={4}
         gap={4}

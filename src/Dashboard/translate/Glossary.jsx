@@ -44,7 +44,7 @@ const Glossary = () => {
 
   return (
     <>
-      <Grid container xs={24} sx={{ padding: '4px ', marginBottom: '10px' }}>
+      {/* <Grid container xs={24} sx={{ padding: '4px ', marginBottom: '10px' }}>
         <Grid item xs={8}>
           <Paper
             component='form'
@@ -83,7 +83,7 @@ const Glossary = () => {
           </Button>
         </Grid>
       </Grid>
-      <Divider style={{ marginTop: '1rem', marginBottom: '1rem' }} />
+      <Divider style={{ marginTop: '1rem', marginBottom: '1rem' }} /> */}
 
       {!isterm && (
         <div style={{ textAlign: 'center' }}>
@@ -93,6 +93,7 @@ const Glossary = () => {
               variant='contained'
               style={{ background: '#09c', textTransform: 'none' }}
               onClick={addTerm}
+              className='translate-bold-font'
             >
               + Click here to create one
             </Button>
@@ -294,16 +295,20 @@ const Glossary = () => {
                 </span>
               </div>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={2} textAlign={'end'} paddingRight={'2rem'}>
               <Button
                 variant='text'
                 onClick={cancelTerm}
-                style={{ textTransform: 'none' }}
+                className='translate-bold-font'
+                style={{
+                  textTransform: 'none'
+                }}
               >
                 Cancel
               </Button>
               <Button
                 variant='contained'
+                className='translate-bold-font'
                 style={{ background: '#09c', textTransform: 'none' }}
               >
                 + Add

@@ -16,8 +16,7 @@ const Comment = ({ visibleModal }) => {
     <>
       <div
         style={{
-          cursor: 'pointer',
-          transform: 'translate(-25px, 0px)'
+          cursor: 'pointer'
         }}
         onClick={() => visibleModal(true)}
       >

@@ -97,8 +97,9 @@ function Editor () {
                   container
                   onMouseMove={() => setHover(index)}
                   onMouseLeave={() => setHover(null)}
+                  columns={30}
                 >
-                  <Grid items xs={11}>
+                  <Grid items xs={29}>
                     <ListItem
                       key={value}
                       disablePadding
