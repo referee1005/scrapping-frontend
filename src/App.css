@@ -1482,13 +1482,49 @@ img.back_arrow {
   font-size: 18px;
   line-height: 18px;
   outline: none;
-<<<<<<< HEAD
   opacity: 0.3;
 }
-=======
-  opacity: .3;
-}
-.img-prop-section{
+.img-prop-section {
   margin-top: 20px;
 }
->>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
+
+.translate_navbar_download_icon {
+  background-image: url(../public/img/icon-download-complete.svg);
+}
+.translate_navbar_folder_icon {
+  background-image: url(../public/img/icon-folder.svg);
+  width: 21px;
+  height: 21px;
+}
+.translate_navbar_folder_badge_icon {
+  position: absolute;
+  /* left: -10px;
+  top: -8px; */
+  font-family: Calibri, Arial, Helvetica, sans-serif !important;
+  color: #fff;
+  transform: translate(-12px, -10px);
+}
+.icon-container {
+  position: absolute;
+  left: 300px;
+  display: flex;
+}
+
+.ui.form .find-wrapper .find-container .search-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2em;
+  padding: 15px 6.5% 15px 5%;
+  text-align: left;
+  background: #f2f4f7;
+}
+.ui.form .find-wrapper .find-container .search-display .found {
+  margin: 0;
+  margin-right: 20px;
+}
+p {
+  margin: 0em 0em 1em;
+  line-height: 1.4285em;
+}

@@ -14,7 +14,7 @@ import Manage from "./Dashboard/Manage/Manage";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <BrowserRouter>
         {/* <Container> */}
         <Routes>
@@ -26,7 +26,7 @@ function App() {
         </Routes>
         <ChatBot />
         {/* </Container> */}
-        <NewFooter />
+        {/* <NewFooter /> */}
       </BrowserRouter>
     </div>
   );

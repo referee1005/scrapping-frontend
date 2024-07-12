@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Grid from '@mui/material/Grid'
 import { TextField, Typography } from '@mui/material'
 import { makeStyles, withStyles } from '@mui/styles'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import ItemFooter from './ItemFooter'
 import Button from '@mui/material/Button'
+import { forEach } from 'lodash'
 const useStyles = makeStyles({
   customInput: {
     height: '20px !important', // Adjust the height as needed
@@ -14,6 +15,8 @@ const useStyles = makeStyles({
 
 const ItemContainer = ({
   index,
+  sText,
+  text,
   editvalue,
   value,
   splitSegment,
@@ -23,22 +26,54 @@ const ItemContainer = ({
 }) => {
   const classes = useStyles()
   const [hoverArrow, setHoverArrow] = React.useState(null)
+  /* useEffect(() => {
+
+    const sources = document.getElementsByClassName('source').children
+    const targets = document.getElementsByClassName('target').children
+    console.log(sources, sources.item(1))
+    for (let i = 0; i < sources.length; i++) {
+      let highlightedSourceText = sources
+        .item(i)
+        .replace(
+          /s/g,
+          '<span style="background-color: yellow;">' +
+            sText['source'] +
+            '</span>'
+        )
+      let highlightedTargetText = targets
+        .item(i)
+        .replace(
+          /s/g,
+          '<span style="background-color: yellow;">' +
+            sText['target'] +
+            '</span>'
+        )
+      document.getElementsByClassName('source').innerHTML =
+        highlightedSourceText
+      document.getElementsByClassName('target').innerHTML =
+        highlightedTargetText
+    }
+
+  }, [sText]) */
+
   return (
     <>
       {editvalue != value ? (
         <Grid container spacing={2} onClick={visibleModal}>
           <Grid item xs={6}>
-            <div>
-              Created BI applications with QlikView, Tableau, and Power BI for
+            <div className='source'>
+              {/* Created BI applications with QlikView, Tableau, and Power BI for
               marketing, customer acquisition, CRM, responsible gaming,
-              payments, and finance.
+              payments, and finance. */}
+              {text['source']}
             </div>
           </Grid>
           <Grid item xs={6}>
-            <div>
-              Création d'applications BI avec QlikView, Tableau et Power BI pour
+            <div className='target'>
+              {/* Création d'applications BI avec QlikView, Tableau et Power BI pour
               le marketing, l'acquisition de clients, le CRM, les jeux
-              responsables, les paiements et les finances.
+              responsables, les paiements et les finances. */}
+              {text['target']}
             </div>
           </Grid>
         </Grid>
@@ -47,9 +82,7 @@ const ItemContainer = ({
           <Grid item xs={6}>
             <Grid container spacing={2}>
               <Grid item xs={11}>
-                Created BI applications with QlikView, Tableau, and Power BI for
-                marketing, customer acquisition, CRM, responsible gaming,
-                payments, and finance.
+                {text['source']}
                 {splitSegment && (
                   <div style={{ float: 'right', marginTop: 50 }}>
                     <Button
@@ -107,7 +140,8 @@ const ItemContainer = ({
               rows={5}
               className='textarea'
               defaultValue={
-                "Création d'applications BI avec QlikView, Tableau et Power BI pour le marketing, l'acquisition de clients, le CRM, les jeux responsables, les paiements et les finances."
+                // "Création d'applications BI avec QlikView, Tableau et Power BI pour le marketing, l'acquisition de clients, le CRM, les jeux responsables, les paiements et les finances."
+                text['target']
               }
             ></textarea>
             <div style={{ float: 'right', background: '#09c' }}>
