@@ -22,7 +22,7 @@ function App() {
             <Route path="/" Component={CatTool}></Route>
             <Route path="/analyze" Component={Analyze}></Route>
             <Route path="/translate" Component={Editor}></Route>
-            {/*<Route path="/report" element={<QualityReport />} /> */}
+            <Route path="/report" element={<QualityReport />} />
           </Routes>
          {/* <ChatBot/> */}
         {/* </Container> */}
