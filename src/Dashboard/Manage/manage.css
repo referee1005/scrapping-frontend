@@ -1,0 +1,572 @@
+.project-list {
+    padding-bottom: 160px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+
+.project-list .ui.container {
+    max-width: 991px;
+    margin: auto;
+    transition: .3s ease;
+    width: 100%;
+}
+
+.project-list .project_ui {
+    margin-bottom: 30px !important;
+}
+
+.project-list .project_ui .project_header {
+    background-color: #eaebee;
+    padding-bottom: 10px !important;
+    margin-bottom: -25px;
+    position: relative;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.project-list .project_ui .project_header .project_title {
+    width: 56.25%;
+    position: relative;
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    vertical-align: top;
+    text-align: left;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.project-list .ui-ribbon {
+    z-index: 2;
+    left: -28px;
+    max-width: 535px;
+    min-width: 0px;
+    line-height: 17px;
+    background-color: #aebdcd;
+    color: #000;
+    height: 30px;
+    border-radius: 0 2px 2px 0;
+    display: inline-block;
+    position: relative;
+    margin: 0em;
+    margin-right: -1.2em;
+    padding-left: calc(1rem + 1.2em);
+    padding-right: 1.2em;
+}
+
+.project-list .ui-ribbon .project-id {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 17px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    min-width: 72px;
+    color: #5a5a5a;
+}
+
+.project-list .ui-ribbon .project-name {
+    font-size: 17px;
+    max-width: 400px;
+    min-width: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.project-list .ui-ribbon:after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0%;
+    background-color: transparent !important;
+    border-style: solid;
+    border-width: 0em 14px 14px 0em;
+    border-color: transparent transparent transparent transparent;
+    border-right-color: #c0c1c2;
+    width: 0em;
+    height: 0em;
+}
+
+.project-list  .project_activity {
+    padding: 2px 12px 0px !important;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    position: relative;
+    top: 4px;
+    width: 43.75% !important;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.project-list .project_assignee {
+    background-color: #f4f4f4 !important;
+    box-shadow: 0px 0px 1px #666 !important;
+    opacity: 1;
+    text-align: center;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    display: flex;
+    max-width: 170px;
+    min-width: 30px;
+    border-radius: 15px;
+    padding: 3px 15px 3px 3px;
+    color: #000;
+    transition: .3s ease;
+    height: 30px;
+}
+
+.project-list .project_assignee span.img_avatar img {
+    max-width: 100px;
+    border-radius: 500rem;
+    max-height: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.project-list .project_assignee span.img_avatar {max-height: 24px;display: inline-block;}
+
+.project-list .project_assignee span.user-name {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.toggle_ellipses button#composition-button {
+    min-width: auto;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    background: #e0e1e2;
+    border-radius: 50px;
+}
+
+.project_body {
+    padding-top: 1rem;
+    background-color: #eaebee;
+    display: inline-block;
+    width: 100%;
+}
+
+.project_body .jobs {
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.project_body .jobs .chunks {
+    transition: .3s ease;
+    background-color: #fff;
+    padding: 8px 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border-left: 2px solid #09c;
+    padding-left: 13px !important;
+    box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24) !important;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project_body .jobs .chunks .job-id {
+    float: left;
+    min-width: 70px;
+    color: #969696;
+    font-size: 12px;
+    position: relative;
+    line-height: 28px;
+    top: 2px;
+    margin-right: 5px;
+}
+
+.project_body .jobs .chunks .languages-tooltip {
+    min-width: 140px;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    top: 1px;
+}
+
+.project_body .jobs .chunks .languages-tooltip .source_label {
+    float: left;
+    max-width: 60px;
+    min-width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.project_body .jobs .chunks .languages-tooltip .in_to {
+    float: left;
+    top: 4px;
+    color: #5a5a5a;
+    line-height: 26px;
+    position: relative;
+    font-size: 12px;
+}
+
+.project_body .jobs .chunks .languages-tooltip .target_box {
+    float: left;
+    width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.project_body .jobs .chunks .progress_bar {
+    height: 20px;
+    top: 15px;
+    float: left;
+    min-width: 115px;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+.project_body .jobs .chunks .job-payable {
+    padding: 0 5px 0 5px !important;
+    float: left;
+    text-decoration: underline;
+    min-width: 106px;
+    line-height: 30px;
+    font-weight: 700;
+    position: relative;
+    top: 1px;
+}
+
+.project_body .jobs .chunks .outsource-job {
+    display: inline-block;
+    padding-left: 5px;
+    min-width: 20% !important;
+}
+
+.project_body .jobs .chunks .outsource-job a, .project_body .jobs .chunks .job-payable a {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    vertical-align: text-bottom;
+    color: #4184c4;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    margin-top: 5px;
+    transition: .3s ease;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 14px;
+}
+
+ *{
+    box-sizing: border-box;
+ }
+
+ .project_body .jobs .chunks a#open-quote-request {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    font-weight: normal;
+    padding: 5px 8px;
+    border: none;
+    font-size: 14px;
+    gap: 2px;
+    min-height: 1em;
+    outline: none
+}
+
+.project_body .jobs .chunks a.open-translate {
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    padding: 6px 15px;
+    vertical-align: top;
+    font-size: 16px;
+    border-radius: 2px;
+    float: right;
+    background-color: #09c;
+    transition: .3s ease;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+.project_body .jobs .chunks ul#composition-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.project_body .jobs .chunks ul#composition-menu a.item {
+    display: inline-block;
+    color: #000;
+    font-size: 14px;
+}
+
+.outsource_container {
+    width: calc(100% + 2rem);
+    transition: .3s ease;
+    background-color: #fff;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.outsource_container .outsource-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 35px 5px 40px;
+    z-index: 1;
+}
+
+.outsource_container .outsource-header .job-id {
+    float: left;
+    min-width: 70px;
+    color: #969696;
+    font-size: 12px;
+    position: relative;
+    line-height: 28px;
+    top: 2px;
+    margin-right: 5px;
+}
+
+.outsource_container .outsource-header .languages-tooltip {
+    display: flex;
+    gap: 10px;
+    min-width: 140px;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    top: 1px;
+}
+
+.outsource_container .outsource-header .job-payable {
+    padding: 0 5px 0 5px !important;
+    float: left;
+    min-width: 106px;
+    line-height: 30px;
+    font-weight: 700;
+    position: relative;
+    top: 1px;
+    font-size: 14px;
+}
+
+.background-outsource-vendor {
+    background: #d9e0e8;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    cursor: auto;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-service {
+    padding: 5px 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-service .service-box {
+    display: inline-block;
+    padding: 0 10px 0 15px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-service .service-box .service {
+    display: inline-block;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-service .fiducial-logo {
+    display: inline-block;
+    padding: 0;
+    vertical-align: text-bottom;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-service .fiducial-logo .translated-logo {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4285em;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-service .fiducial-logo .translated-logo img.logo-t {
+    width: 100px;
+    position: relative;
+    top: 6px;
+    padding: 0;
+    margin: 0 0 0 5px;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-details-box {
+    background-color: #fff;
+    padding: 15px;
+    position: relative;
+    min-height: 232px;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-details-box .translator-job-details {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-details-box .translator-job-details .translator-details-box {
+    width: 38%;
+    border-right: 1px solid #000;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0 0 10px;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-details-box .translator-job-details .translator-details-box p {
+    font-size: 14px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 0;
+}
+
+.background-outsource-vendor .outsource_vendor .payment-details-box .job-details-box {
+    display: inline-block;
+    width: 44% !important;
+    vertical-align: middle;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+
+.outsource_vendor .payment-details-box .job-details-box .source-target-outsource {
+    font-size: 16px;
+    display: inline-block;
+    width: 68%;
+}
+
+.outsource_vendor .payment-details-box .job-details-box .source-box {
+    display: inline-block;
+}
+
+.outsource_vendor .payment-details-box .job-details-box  .in-to {
+    font-size: 13px;
+    display: inline-block;
+}
+
+.outsource_vendor .payment-details-box .job-details-box .target-box {
+    display: inline-block;
+}
+
+.outsource_vendor .payment-details-box .job-details-box  .job-payment {
+    display: inline-block;
+    width: 32%;
+    text-align: right;
+    padding-right: 28px;
+}
+
+.outsource_vendor .payment-details-box .job-price {
+    display: inline-block;
+    vertical-align: middle;
+    width: 18%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.outsource_vendor .payment-details-box .revision-box {
+    padding: 4px 0px;
+    background-color: #aebdcd;
+    margin-bottom: 10px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.outsource_vendor .payment-details-box .revision-box .add-revision {
+    display: inline-block;
+    width: 82%;
+    text-align: right;
+    padding-right: 28px;
+}
+
+.outsource_vendor .payment-details-box .revision-box .job-price {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    width: 18%;
+    margin: 0;
+}
+
+.revision-box {
+    padding: 4px 0px;
+    background-color: #aebdcd;
+    margin-bottom: 10px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.revision-box .add-revision {
+    display: inline-block;
+    width: 82%;
+    text-align: right;
+    padding-right: 28px;
+}
+
+.revision-box .job-price {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    width: 18%;
+    margin: 0;
+}
+
+.delivery-order {
+    width: 79%;
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    padding-right: 25px;
+}
+
+.delivery-order .delivery-box {
+    text-align: right;
+    display: inline-block;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.delivery-order .delivery-box label {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 100;
+    padding: 5px;
+}
+
+.delivery-order .delivery-box .delivery-date {
+    display: inline-block;
+    padding: 5px;
+}
+ .atdd{
+    display: inline-block;
+    font-weight: 100;
+}
+.delivery-order .delivery-box .delivery-date .delivery-time {
+    display: inline-block;
+    padding: 5px 15px 5px 5px;
+}
+

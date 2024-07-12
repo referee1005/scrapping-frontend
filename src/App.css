@@ -1482,5 +1482,13 @@ img.back_arrow {
   font-size: 18px;
   line-height: 18px;
   outline: none;
+<<<<<<< HEAD
   opacity: 0.3;
 }
+=======
+  opacity: .3;
+}
+.img-prop-section{
+  margin-top: 20px;
+}
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54

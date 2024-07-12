@@ -24,6 +24,7 @@ import {
   ListItemText,
   Checkbox,
   Tooltip,
+<<<<<<< HEAD
   Link
 } from '@mui/material'
 import TextField from '@mui/material/TextField'
@@ -34,6 +35,21 @@ import MenuIcon from '@mui/icons-material/Menu'
 import SideBarTabs from '../SideBarTabs'
 import { styled } from '@mui/system'
 import InfoTooltip from '../components/infoTooltip'
+=======
+  Link,
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow }
+ from "@mui/material";
+ import { useNavigate } from 'react-router-dom';
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import UploadIcon from "@mui/icons-material/Upload";
+import Chip from "@mui/material/Chip";
+import MenuIcon from "@mui/icons-material/Menu";
+import SideBarTabs from "../SideBarTabs";
+import { styled } from "@mui/system";
+import InfoTooltip from "../components/infoTooltip";
+import DeleteIcon from '@mui/icons-material/Delete';
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
 // import SwitchButton from "../components/SwitchButton"
 
 const CustomPopper = styled(Popper)({
@@ -162,6 +178,7 @@ const languages = [
   { prelim: 'pap-AW', title: 'Papiamento (Aruba)' }
 ]
 
+<<<<<<< HEAD
 export default function CatTool () {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [selectedValues, setSelectedValues] = useState([])
@@ -174,6 +191,22 @@ export default function CatTool () {
   const [selectedFromLanguage, setSelectedFromLanguage] = useState(null)
   const [singleLanguageDialogOpen, setSingleLanguageDialogOpen] =
     useState(false)
+=======
+export default function CatTool() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedValues, setSelectedValues] = useState([]);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [formatDialogOpen, setFormatDialogOpen]=useState(false)
+  const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const autocompleteRef = useRef(null);
+  const [autocompleteOpen, setAutocompleteOpen] = useState(false);
+  const [selectedFromLanguage, setSelectedFromLanguage] = useState(null);
+  const [singleLanguageDialogOpen, setSingleLanguageDialogOpen] = useState(false);
+  const [files, setFiles] = useState([]);
+  const fileInputRef = useRef(null);
+  const navigate = useNavigate();
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
 
   useEffect(() => {
     if (dialogOpen) {
@@ -197,17 +230,47 @@ export default function CatTool () {
 
   const [from, setFrom] = useState('')
 
+<<<<<<< HEAD
   const handleFileDrop = e => {
     e.preventDefault()
     const files = e.dataTransfer.files
     console.log(files)
   }
+=======
+  const handleFileDrop = (e) => {
+    e.preventDefault();
+    const uploadedFiles = Array.from(e.dataTransfer.files);
+    setFiles((prevFiles) => [...prevFiles, ...uploadedFiles]);
+    console.log(uploadedFiles);
+  };
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
 
   const handleDragOver = e => {
     e.preventDefault()
   }
 
+<<<<<<< HEAD
   const toggleDrawer = open => event => {
+=======
+  const handleFileChange = (e) => {
+    const uploadedFiles = Array.from(e.target.files);
+    setFiles((prevFiles) => [...prevFiles, ...uploadedFiles]);
+    console.log(uploadedFiles);
+  };
+
+  const handleDelete = (index) => {
+    setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+  };
+  const handleAddMoreFiles = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleClearAll = () => {
+    setFiles([]);
+  };
+
+  const toggleDrawer = (open) => (event) => {
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
@@ -255,6 +318,9 @@ export default function CatTool () {
   const errorDialogClose = () => {
     setSingleLanguageDialogOpen(false)
   }
+  const handleAnalyzeClick = () => {
+    navigate('/analyze');
+  };
   return (
     <Container>
       <Toolbar className='cat_tool_desc'>
@@ -274,8 +340,29 @@ export default function CatTool () {
               />
             </FormGroup>
 
+<<<<<<< HEAD
             <FormGroup className='form_group'>
               <Typography variant='body1' gutterBottom>
+=======
+            <FormGroup className="form_group">
+              <Typography variant="body1" gutterBottom>
+                Team
+              </Typography>
+              <Autocomplete
+                disablePortal
+                className="search_lang"
+                id="combo-box-demo"
+                options={[]}
+                renderInput={(params) => <TextField placeholder="Personal" {...params} />}
+              />
+            </FormGroup>
+            
+
+            
+
+            <FormGroup className="form_group">
+              <Typography variant="body1" gutterBottom>
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
                 From
               </Typography>
               <Autocomplete
@@ -369,6 +456,21 @@ export default function CatTool () {
                 id='combo-box-demo'
                 options={[]}
                 renderInput={params => <TextField {...params} />}
+              />
+            </FormGroup>
+
+            
+            <FormGroup className="form_group">
+              <Typography variant="body1" gutterBottom>
+              Project template
+                <InfoTooltip/>
+              </Typography>
+              <Autocomplete
+                disablePortal
+                className="search_lang"
+                id="combo-box-demo"
+                options={[]}
+                renderInput={(params) => <TextField placeholder="Standard" {...params} />}
               />
             </FormGroup>
 
@@ -966,6 +1068,7 @@ export default function CatTool () {
                 {/* <Button onClick={handleDialogClose} className="btn_confirm">Confirm</Button> */}
               </DialogActions>
             </Dialog>
+<<<<<<< HEAD
           </Toolbar>
           <Paper
             className='drag_upload'
@@ -995,6 +1098,79 @@ export default function CatTool () {
               <Typography variant='body1'>or click here to browse</Typography>
             </label>
           </Paper>
+=======
+      </Toolbar>
+
+
+      <div className="drag-section">
+      <input
+        type="file"
+        id="file-input"
+        style={{ display: 'none' }}
+        multiple
+        onChange={handleFileChange}
+        ref={fileInputRef}
+      />
+      {files.length === 0 ? (
+        <Paper
+          className="drag_upload"
+          variant="outlined"
+          elevation={0}
+          onDrop={handleFileDrop}
+          onDragOver={handleDragOver}
+        >
+          <label htmlFor="file-input">
+            <IconButton component="span">
+              <UploadIcon />
+            </IconButton>
+            <Typography variant="h4">
+              Drop your files to translate them with Matecat
+            </Typography>
+            <Typography variant="body1">or click here to browse</Typography>
+          </label>
+        </Paper>
+      ) : (
+        <div className="img-prop-section">
+          <TableContainer component={Paper}>
+            <Table>
+              <TableBody>
+                {files.map((file, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{file.name}</TableCell>
+                    <TableCell>{(file.size / 1024).toFixed(2)} KB</TableCell>
+                    <TableCell>
+                      <IconButton
+                        color="secondary"
+                        onClick={() => handleDelete(index)}
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleAddMoreFiles}
+            style={{ marginTop: '10px', marginRight: '10px' }}
+          >
+            Add More Files
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={handleClearAll}
+            style={{ marginTop: '10px' }}
+          >
+            Clear All
+          </Button>
+        </div>
+      )}
+    </div>
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
         </form>
         <Toolbar className='form_bottom_bar'>
           <Typography variant='body1'>
@@ -1004,7 +1180,11 @@ export default function CatTool () {
             </Link>{' '}
             and <Link>Google drive</Link> files
           </Typography>
+<<<<<<< HEAD
           <Button type='submit' variant='contained' color='primary'>
+=======
+          <Button onClick={handleAnalyzeClick} type="submit" variant="contained" color="primary">
+>>>>>>> 62851c3ef4d241fd36f011661d819e44dd788b54
             Analyze
           </Button>
         </Toolbar>
