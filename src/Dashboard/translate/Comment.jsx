@@ -26,7 +26,8 @@ const Comment = ({ visibleModal }) => {
         boxShadow={1}
         style={{
           marginLeft: 30,
-          border: '1px solid grey'
+          border: '1px dotted grey',
+          paddingBottom: -10
         }}
       >
         <IconButton
@@ -35,8 +36,9 @@ const Comment = ({ visibleModal }) => {
           style={{
             position: 'absolute',
             padding: 0,
-            top: 0,
-            right: 0
+            top: -10,
+            right: -10,
+            background: 'white'
           }}
           onClick={visibleModal}
         >
@@ -46,13 +48,16 @@ const Comment = ({ visibleModal }) => {
           style={{
             // width: 10,
             // height: 10,
+
             bottom: 0,
             borderTop: 'unset',
             borderLeft: 'unset',
-            borderBottom: '12px solid #fff',
+            borderBottom: '16px solid #fff',
+            borderRight: '1px dotted grey',
             borderLeft: '14px solid rgba(0, 0, 0, 0)',
-            filter: ' drop-shadow(-1px 2px 1px rgba(0, 0, 0, 0.2))',
-            transform: 'translate(-12px, 138px)'
+            filter: ' drop-shadow(-1px 2px 1px rgba(0, 0, 0, 0.3))',
+            transform: 'translate(-12px, 145px)',
+            width: 'calc(100% - 2px)'
           }}
         ></div>
         <Typography
@@ -102,7 +107,8 @@ const Comment = ({ visibleModal }) => {
             background: '#09c',
             color: 'black',
             textTransform: 'none',
-            color: 'white'
+            color: 'white',
+            marginBottom: 10
           }}
           // onClick={invisibleSplitSegment}
         >

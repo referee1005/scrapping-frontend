@@ -132,8 +132,20 @@ const Glossary = () => {
                     value=''
                     required
                     input={<InputBase />}
+                    renderValue={selected => {
+                      // if (selected.length === 0) {
+                      return <em>select a glossary</em>
+                      // }
+
+                      // return selected.join(', ')
+                    }}
+                    // placeholder='select a glossary'
                   >
-                    <MenuItem value=''>Select TM & Glossary</MenuItem>
+                    {' '}
+                    <MenuItem disabled value=''>
+                      <em>select a glossary</em>
+                    </MenuItem>
+                    {/* <MenuItem value=''>Select TM & Glossary</MenuItem> */}
                     <MenuItem value='tm1'>TM 1</MenuItem>
                     <MenuItem value='tm2'>TM 2</MenuItem>
                   </CustomSelect>
@@ -146,7 +158,12 @@ const Glossary = () => {
                   Domain*
                 </Typography>
                 <FormControl fullWidth variant='outlined'>
-                  <CustomSelect id='tm-glossary' value='' required>
+                  <CustomSelect
+                    id='tm-glossary'
+                    value=''
+                    required
+                    placeholder='No domain'
+                  >
                     <MenuItem value=''>Select TM & Glossary</MenuItem>
                     <MenuItem value='tm1'>TM 1</MenuItem>
                     <MenuItem value='tm2'>TM 2</MenuItem>
@@ -160,7 +177,12 @@ const Glossary = () => {
                   Subdomain*
                 </Typography>
                 <FormControl fullWidth variant='outlined'>
-                  <CustomSelect id='tm-glossary' value='' required>
+                  <CustomSelect
+                    id='tm-glossary'
+                    value=''
+                    required
+                    placeholder='No subdomain'
+                  >
                     <MenuItem value=''>Select TM & Glossary</MenuItem>
                     <MenuItem value='tm1'>TM 1</MenuItem>
                     <MenuItem value='tm2'>TM 2</MenuItem>
