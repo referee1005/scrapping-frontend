@@ -1,0 +1,121 @@
+[
+    {
+        "id": "3978154268",
+        "secPerWord": "00''",
+        "pee": "0%",
+        "segmentStatus": "TRANSLATED",
+        "sourceText": "Improving the realism of AI-generated speech, especially when dynamically inserting personalized content like names, involves several steps and considerations:",
+        "suggestionText": "Migliorare il realismo del discorso generato dall'IA, soprattutto quando si inseriscono dinamicamente contenuti personalizzati come i nomi, comporta diversi passaggi e considerazioni:",
+        "qaTags": ["Tag mismatch (1)"],
+        "words": 19,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154275",
+        "secPerWord": "00''",
+        "pee": "4%",
+        "segmentStatus": "DRAFT",
+        "sourceText": "Pitch and Pace Adjustment: Fine-tune the pitch and pace of the inserted names to match the surrounding speech.",
+        "suggestionText": "Regolazione del tono e del ritmo: regola il tono e il ritmo dei nomi inseriti in modo che corrispondano al discorso circostante.",
+        "translationText": "",
+        "qaTags": ["Automated (1)"],
+        "words": 18,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154276",
+        "secPerWord": "01''",
+        "pee": "2%",
+        "segmentStatus": "TRANSLATED",
+        "sourceText": "Ensure the training data includes a wide variety of speaking styles, intonations, and contexts.",
+        "suggestionText": "Assicurati che i dati di formazione includano un'ampia varietà di stili di parlato, intonazioni e contesti.",
+        "translationText": "Assicurati che i dati di formazione includano un'ampia varietà di stili di parlato, intonazioni e contesti.",
+        "qaTags": ["Automated (2)", "Tag mismatch (3)"],
+        "words": 22,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154277",
+        "secPerWord": "02''",
+        "pee": "3%",
+        "segmentStatus": "DRAFT",
+        "sourceText": "Make sure the system is capable of adapting to different accents and dialects.",
+        "suggestionText": "Assicurati che il sistema sia in grado di adattarsi a diversi accenti e dialetti.",
+        "translationText": "",
+        "qaTags": ["Automated (2)", "Tag mismatch (1)"],
+        "words": 15,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154278",
+        "secPerWord": "01''",
+        "pee": "1%",
+        "segmentStatus": "TRANSLATED",
+        "sourceText": "Adjust the AI to handle variations in speaking speed and volume.",
+        "suggestionText": "Regola l'IA per gestire le variazioni nella velocità e nel volume del parlato.",
+        "translationText": "Regola l'IA per gestire le variazioni nella velocità e nel volume del parlato.",
+        "qaTags": ["Automated (1)", "Tag mismatch (2)"],
+        "words": 17,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154279",
+        "secPerWord": "00''",
+        "pee": "5%",
+        "segmentStatus": "DRAFT",
+        "sourceText": "Ensure the output quality is consistent across different languages.",
+        "suggestionText": "Assicurati che la qualità dell'output sia coerente tra le diverse lingue.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 13,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154280",
+        "secPerWord": "01''",
+        "pee": "3%",
+        "segmentStatus": "TRANSLATED",
+        "sourceText": "Implement a feedback loop to continually improve the AI's performance.",
+        "suggestionText": "Implementa un ciclo di feedback per migliorare continuamente le prestazioni dell'IA.",
+        "translationText": "Implementa un ciclo di feedback per migliorare continuamente le prestazioni dell'IA.",
+        "qaTags": ["Automated (1)", "Tag mismatch (3)"],
+        "words": 21,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154281",
+        "secPerWord": "02''",
+        "pee": "2%",
+        "segmentStatus": "DRAFT",
+        "sourceText": "Use diverse datasets to train the AI for better generalization.",
+        "suggestionText": "Utilizza set di dati diversificati per addestrare l'IA per una migliore generalizzazione.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (2)"],
+        "words": 14,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154282",
+        "secPerWord": "01''",
+        "pee": "0%",
+        "segmentStatus": "TRANSLATED",
+        "sourceText": "Test the system thoroughly before deployment.",
+        "suggestionText": "Testa il sistema a fondo prima della distribuzione.",
+        "translationText": "Testa il sistema a fondo prima della distribuzione.",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 10,
+        "mtLabel": "MT"
+    },
+    {
+        "id": "3978154283",
+        "secPerWord": "01''",
+        "pee": "4%",
+        "segmentStatus": "DRAFT",
+        "sourceText": "Ensure user privacy and data security.",
+        "suggestionText": "Assicurati della privacy e della sicurezza dei dati degli utenti.",
+        "translationText": "",
+        "qaTags": ["Automated (1)", "Tag mismatch (1)"],
+        "words": 9,
+        "mtLabel": "MT"
+    }
+]

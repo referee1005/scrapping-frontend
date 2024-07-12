@@ -130,7 +130,7 @@ export default function SideBarTabs() {
                         </form>
                     </Toolbar>
                 </Toolbar>
-            )}
+                    )}
 
 
                 {isToolbarVisible && (

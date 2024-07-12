@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
-import { TextField } from '@mui/material'
+import { TextField, Typography } from '@mui/material'
 import { makeStyles, withStyles } from '@mui/styles'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import ItemFooter from './ItemFooter'
@@ -18,14 +18,15 @@ const ItemContainer = ({
   value,
   splitSegment,
   setTranslated,
+  visibleModal,
   invisibleSplitSegment
 }) => {
   const classes = useStyles()
-
+  const [hoverArrow, setHoverArrow] = React.useState(null)
   return (
     <>
       {editvalue != value ? (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} onClick={visibleModal}>
           <Grid item xs={6}>
             <div>
               Created BI applications with QlikView, Tableau, and Power BI for
@@ -86,7 +87,17 @@ const ItemContainer = ({
                 style={{ verticalAlign: 'middle', cursor: 'pointer' }}
                 title='Copy source to target'
               >
-                <ArrowForwardIosIcon color='info' cursor />
+                <ArrowForwardIosIcon
+                  color='info'
+                  cursor
+                  onMouseMove={() => setHoverArrow(true)}
+                  onMouseLeave={() => setHoverArrow(false)}
+                />
+                {hoverArrow && (
+                  <Typography fontSize={8} style={{ textAlign: 'center' }}>
+                    CTRL+I
+                  </Typography>
+                )}
               </Grid>
             </Grid>
           </Grid>

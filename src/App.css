@@ -45,14 +45,15 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: #fff; 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1); 
   border-radius: 40px;
 }
+
 
 /* 05/07/2024 */
 
@@ -88,7 +89,7 @@ header.header_bar .navigation a.button_white {
 }
 
 .cat_tool_desc {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .cat_tool_desc h3 {
@@ -125,13 +126,12 @@ header.header_bar .navigation a.button_white {
   font-weight: normal;
 }
 
-.form_group input,
-.form_group .MuiSelect-select {
+.form_group input, .form_group .MuiSelect-select {
   padding: 3px 5px 3px 9px;
   font-size: 16px !important;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  border: 1px solid rgba(34, 36, 38, .15);
   height: 37px;
   box-shadow: inset 0 1px 3px #ddd !important;
   min-width: 120px;
@@ -143,7 +143,7 @@ header.header_bar .navigation a.button_white {
   position: relative;
   border: 1px dashed #ccc !important;
   margin: 18px 22px;
-  min-height: 200px;
+  min-height: 150px;
   border-radius: 4px;
   background: #fff !important;
   display: flex;
@@ -159,7 +159,7 @@ header.header_bar .navigation a.button_white {
   font-weight: 600;
 }
 
-.drag_upload p {
+.drag_upload  p {
   font-size: 24px;
   text-decoration: underline;
   color: #788190;
@@ -196,7 +196,7 @@ header.header_bar .navigation a.button_white {
 .sidebar_opening button {
   gap: 7px;
   fill: #0055b8;
-  color: #000;
+  color:#000;
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -213,8 +213,7 @@ header.header_bar .navigation a.button_white {
 }
 
 .settings-panel-header .settings-panel-header-logo {
-  background: url(https://www.matecat.com/public/build/images/logo_matecat_small_white.svg)
-    no-repeat;
+  background: url(https://www.matecat.com/public/build/images/logo_matecat_small_white.svg) no-repeat;
   background-position-y: center;
   background-size: contain;
   width: 35px;
@@ -230,27 +229,27 @@ header.header_bar .navigation a.button_white {
   height: 100%;
   max-width: 1024px;
   background-color: #fff;
-  transition: transform 0.5s ease-in-out !important;
+  transition: transform .5s ease-in-out !important;
 }
 
 .form_bottom_bar {
   width: 100%;
 }
 
-.cat_tool_desc form .search_lang .MuiInputBase-formControl {
-  padding: 3px 25px 3px 9px !important;
-  font-size: 16px !important;
-  border-radius: 2px;
-  height: 45px !important;
-  box-shadow: none !important;
-  min-width: 160px;
-  max-width: 160px;
-  background: #fff;
-  overflow: hidden;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  box-shadow: inset 0 1px 3px #ddd !important;
-}
-
+.cat_tool_desc form .search_lang .MuiInputBase-formControl  { 
+    padding: 3px 25px 3px 9px !important;
+    font-size: 16px !important;
+    border-radius: 2px;
+    height: 45px !important;
+    box-shadow: none !important;
+    min-width: 160px;
+    max-width: 160px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: inset 0 1px 3px #ddd !important;
+  }
+  
 .cat_tool_desc form .search_lang .MuiInputBase-formControl fieldset {
   border: none;
   border-radius: 2px;
@@ -263,11 +262,8 @@ header.header_bar .navigation a.button_white {
   background: transparent !important;
 }
 
-.cat_tool_desc
-  form
-  .search_lang
-  .MuiInputBase-formControl
-  .MuiAutocomplete-tag {
+
+.cat_tool_desc form .search_lang .MuiInputBase-formControl .MuiAutocomplete-tag {
   text-wrap: nowrap;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -275,42 +271,38 @@ header.header_bar .navigation a.button_white {
   margin: 5px 0;
 }
 
-.cat_tool_desc
-  form
-  .search_lang
-  .MuiAutocomplete-endAdornment.css-p1olib-MuiAutocomplete-endAdornment {
-  z-index: 1;
+.cat_tool_desc form .search_lang .MuiAutocomplete-endAdornment.css-p1olib-MuiAutocomplete-endAdornment {
+    z-index: 1;
 }
 
 .cat_tool_desc form .search_lang button {
-  background: #fff;
+    background: #fff;
 }
 
 .cat_tool_desc form .search_lang .MuiInputBase-formControl:before {
   display: none;
 }
 
+
 .cat_tool_desc form .search_lang .MuiInputBase-formControl:after {
   display: none;
 }
 
-.cat_tool_desc form input#project-name {
-  border: 1px solid rgba(34, 36, 38, 0.15);
-}
+.cat_tool_desc form input#project-name {border: 1px solid rgba(34, 36, 38, .15);}
 
 .cat_tool_desc form fieldset {
-  border: none;
-  border-radius: 2px;
+    border: none;
+    border-radius: 2px;
 }
 
 .MuiContainer-root {
   max-width: 90% !important;
 }
 
-.multilang_dialog .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper {
-  width: 100%;
-  max-width: 90%;
-  height: 90vh;
+.multilang_dialog  .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper {
+    width: 100%;
+    max-width: 90%;
+    height: 90vh;
 }
 
 .header_top {
@@ -337,6 +329,9 @@ header.header_bar .navigation a.button_white {
   font-size: 20px;
   color: #002b5c;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header_top h2 {
@@ -360,7 +355,8 @@ header.header_bar .navigation a.button_white {
   min-width: 40px;
 }
 
-.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault {
+
+.dialog_content  .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault {
   position: relative;
   display: flex;
   padding: 0px 8px;
@@ -373,28 +369,25 @@ header.header_bar .navigation a.button_white {
   justify-content: space-between;
 }
 
-.dialog_content
-  .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault
-  span.MuiChip-label {
+.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault span.MuiChip-label {
   padding-left: 0;
 }
 
-.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault svg {
-  float: right;
-  margin: 0;
-}
+.dialog_content .MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault svg {float: right;margin: 0;}
 
 ul.MuiAutocomplete-listbox {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 15px;
-  /* max-width: 90%; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    column-gap: 15px;
+    text-align: left;
+    /* max-height: 50vh; */
+    /* max-width: 90%; */
 }
 
 ul.MuiAutocomplete-listbox li {
-  height: auto;
-  min-height: 40px !important;
+    height: auto;
+    min-height: 40px !important;
 }
 
 .btn_confirm {
@@ -454,148 +447,149 @@ ul.MuiAutocomplete-listbox li {
 }
 
 .fileformat .extdoc {
-  background: url(../public/img/matecat_file_icons.png) 6px 0 no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px 0 no-repeat !important;
 }
 
 .fileformat .extppt {
-  background: url(../public/img/matecat_file_icons.png) 6px -34px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -34px no-repeat !important;
 }
 
 .fileformat .exthtm {
-  background: url(../public/img/matecat_file_icons.png) 6px -70px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -70px no-repeat !important;
 }
 
 .fileformat .extpdf {
-  background: url(../public/img/matecat_file_icons.png) 6px -104px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -104px no-repeat !important;
 }
 
 .fileformat .extxls {
-  background: url(../public/img/matecat_file_icons.png) 6px -140px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -140px no-repeat !important;
 }
 
 .fileformat .exttxt {
-  background: url(../public/img/matecat_file_icons.png) 6px -172px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -172px no-repeat !important;
 }
 
 .fileformat .extxif {
-  background: url(../public/img/matecat_file_icons.png) 6px -208px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -208px no-repeat !important;
 }
 
 .fileformat .extttx {
-  background: url(../public/img/matecat_file_icons.png) 6px -242px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -242px no-repeat !important;
 }
 
 .fileformat .extitd {
-  background: url(../public/img/matecat_file_icons.png) 6px -276px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -276px no-repeat !important;
 }
 
 .fileformat .extxlf {
-  background: url(../public/img/matecat_file_icons.png) 6px -310px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -310px no-repeat !important;
 }
 
 .fileformat .extmif {
-  background: url(../public/img/matecat_file_icons.png) 6px -342px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -342px no-repeat !important;
 }
 
 .fileformat .extidd {
-  background: url(../public/img/matecat_file_icons.png) 6px -378px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -378px no-repeat !important;
 }
 
 .fileformat .extqxp {
-  background: url(../public/img/matecat_file_icons.png) 6px -412px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -412px no-repeat !important;
 }
 
 .fileformat .extxml {
-  background: url(../public/img/matecat_file_icons.png) 6px -446px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -446px no-repeat !important;
 }
 
 .fileformat .extrcc {
-  background: url(../public/img/matecat_file_icons.png) 6px -484px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -484px no-repeat !important;
 }
 
 .fileformat .extres {
-  background: url(../public/img/matecat_file_icons.png) 6px -516px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -516px no-repeat !important;
 }
 
 .fileformat .extsgl {
-  background: url(../public/img/matecat_file_icons.png) 6px -552px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -552px no-repeat !important;
 }
 
 .fileformat .extsgm {
-  background: url(../public/img/matecat_file_icons.png) 6px -584px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -584px no-repeat !important;
 }
 
 .fileformat .extpro {
-  background: url(../public/img/matecat_file_icons.png) 6px -618px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -618px no-repeat !important;
 }
 
 .fileformat .extdit {
-  background: url(../public/img/matecat_file_icons.png) 6px -652px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -652px no-repeat !important;
 }
 
 .fileformat .exttag {
-  background: url(../public/img/matecat_file_icons.png) 6px -686px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -686px no-repeat !important;
 }
 
 .fileformat .exttmx {
-  background: url(../public/img/matecat_file_icons.png) 6px -722px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -722px no-repeat !important;
 }
 
 .fileformat .extstr {
-  background: url(../public/img/matecat_file_icons.png) 6px -758px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -758px no-repeat !important;
 }
 
 .fileformat .extzip {
-  background: url(../public/img/matecat_file_icons.png) 6px -792px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -792px no-repeat !important;
 }
 
 .fileformat .exticml {
-  background: url(../public/img/matecat_file_icons.png) 6px -826px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -826px no-repeat !important;
 }
 
 .fileformat .extimg {
-  background: url(../public/img/matecat_file_icons.png) 6px -860px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -860px no-repeat !important;
 }
 
 .fileformat .extwix {
-  background: url(../public/img/matecat_file_icons.png) 6px -894px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -894px no-repeat !important;
 }
 
 .fileformat .extsrt {
-  background: url(../public/img/matecat_file_icons.png) 6px -928px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -928px no-repeat !important;
 }
 
 .fileformat .extsbv {
-  background: url(../public/img/matecat_file_icons.png) 6px -1133px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -1133px no-repeat !important;
 }
 
 .fileformat .extvtt {
-  background: url(../public/img/matecat_file_icons.png) 6px -1167px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -1167px no-repeat !important;
 }
 
 .fileformat .extpo {
-  background: url(../public/img/matecat_file_icons.png) 6px -962px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -962px no-repeat !important;
 }
 
 .fileformat .extg {
-  background: url(../public/img/matecat_file_icons.png) 6px -996px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -996px no-repeat !important;
 }
 
 .fileformat .exts {
-  background: url(../public/img/matecat_file_icons.png) 6px -0px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -0px no-repeat !important;
 }
 
 .fileformat .extgsli {
-  background: url(../public/img/matecat_file_icons.png) 6px -1033px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -1033px no-repeat !important;
 }
 
 .fileformat .extgdoc {
-  background: url(../public/img/matecat_file_icons.png) 6px -1070px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -1070px no-repeat !important;
 }
 
 .fileformat .extgsheet {
-  background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !important;
+background: url(../public/img/matecat_file_icons.png) 6px -1107px no-repeat !important;
 }
+
 
 .normal-foo {
   background-color: #eaebee;
@@ -631,7 +625,7 @@ ul.MuiAutocomplete-listbox li {
   line-height: 14px;
 }
 
-.normal-foo .footer-body .side-info {
+.normal-foo .footer-body  .side-info {
   margin-top: 4px;
   display: flex;
   align-items: center;
@@ -711,16 +705,17 @@ ul.MuiAutocomplete-listbox li {
   font-weight: 800;
 }
 .analyse-item1 {
-  background-color: #fff;
+  background-color: #FFF;
   border-left: 1px solid #d9e0e8;
 }
-.color {
+.color{
   background-color: #eeeee5;
   border-radius: 1px;
-  visibility: visible;
+  visibility:visible;
 }
-.color1 {
-  visibility: hidden;
+.color1{
+
+  visibility:hidden;
 }
 .analyse-item1 * {
   font-size: 16px;
@@ -751,4 +746,326 @@ ul.MuiAutocomplete-listbox li {
 .analyse-item1:first-child > div:first-child {
   font-weight: normal;
   border: none;
+}
+
+div#target-language ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] {
+    color: rgb(255, 255, 255);
+    background: rgb(0, 43, 90);
+    border-radius: 2px;
+}
+
+div#target-language ul li .css-tlelie-MuiListItemText-root {
+    order: 1;
+}
+
+div#target-language ul li .MuiCheckbox-root {
+    order: 2;
+    padding: 0;
+    margin: 0 !important;
+    opacity: 0;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] span.MuiButtonBase-root.MuiCheckbox-root {
+    opacity: 1;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] span.MuiButtonBase-root.MuiCheckbox-root * {
+    fill: #fff;
+}
+
+span.code_lang {
+    text-align: center;
+    background-color: #9e9e9e;
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+    min-width: 60px;
+    display: inline-block;
+    font-weight: normal !important;
+}
+
+div#target-language ul li span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+div#target-language ul li.MuiAutocomplete-option[aria-selected="true"] span.code_lang {
+  background-color: #fff;
+  color: #002b5a;
+}
+
+img.switch_btn {
+  max-width: 20px;
+  margin-top: 26px;
+  opacity: 0.5;
+}
+
+.warning_dialog .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper {
+    height: auto;
+    max-width: max-content;
+}
+.login-Modal .MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper{
+  width: 80%;
+  max-width: 800px;
+  min-width: 600px;
+  height: auto;
+}
+.manage-sec{
+  margin-left: -10px;
+  margin-top: 25px;
+  margin-bottom: 56px;
+}
+.manage-sec li {
+  margin-bottom: 15px;
+  margin-right: 42px;
+  list-style-type: none;
+}
+.form_group p img {
+  max-width: 12px;
+  margin-left: 4px;
+}
+
+.signup-btn{
+  color: #fff !important;
+  background: #09c !important;
+  padding: 6px 39px 5px !important;
+}
+
+
+.normal-foo .side-info .item a.email-link {
+  color: #fff;
+  background-color: #788190;
+  padding: 6px 24px;
+  border-radius: 2px;
+}
+
+.right-cont{
+  padding: 20px 0;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+}
+.form-divider{
+  margin-bottom: 15px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 15px;
+}
+.form-divider .divider-line {
+  height: 2px;
+  width: 40%;
+  background-color: #c5c5c5;
+  margin-top: 10px;
+  display: block;
+  float: left;
+}
+
+.login-container-right {
+  width: 41%;
+  padding: 3% 1% 3% 25px;
+  font-size: 17px;
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+  padding-top: 30px;
+}
+
+.login-container-right h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.login-container-right  ul {
+  margin-left: 0px;
+  margin-top: 25px;
+  margin-bottom: 60px;
+  list-style: none;
+  padding: 0;
+}
+
+.login-container-right ul li {
+  position: relative;
+  margin-bottom: 15px;
+  margin-right: 30px;
+  padding-left: 30px;
+}
+
+.login-container-right ul li:before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  left: 0;
+  border: 1px solid;
+  border-color: #3aa9dd;
+  border-width: 0px 4px 4px 0px;
+  transform: rotate(45deg);
+  top: 3px;
+}
+
+.login-container-right .btn-confirm-medium {
+  color: #fff;
+  background: #09c;
+  border: 1px solid #848689;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 2px;
+  font-size: 18px;
+  margin: 16px 0 16px 0px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  min-width: 160px;
+}
+
+.login-container-left {
+  width: 59%;
+  display: inline-block;
+  padding: 30px 0;
+  background: #f8f8f8;
+  border-left: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.login-container-left a.google-login-button {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 2px;
+  font-size: 18px;
+  margin: 16px 0 16px 0px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  background: url(../public/img/btn_gg_sprite.png) no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  border: none;
+  height: 30px;
+  width: 160px;
+  margin-left: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
+  box-sizing: content-box;
+}
+
+.login-form-container {
+  width: 245px;
+  margin: 0 auto;
+}
+
+.login-form-container .form-divider {
+  margin-bottom: 15px;
+}
+
+.form-divider span {
+  float: left;
+  width: 20%;
+  color: #656565;
+}
+
+.login-form-container .MuiToolbar-regular {
+  position: relative;
+  margin-bottom: 17px;
+  padding: 0;
+  min-height: auto;
+}
+
+.login-form-container input {
+  width: 100%;
+  padding: .7em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff !important;
+  outline: none;
+}
+
+.login-form-container a.login-button {
+  color: #fff;
+  background: #09c;
+  border: 1px solid #848689;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 2px;
+  font-size: 18px;
+  margin: 16px 0 16px 0px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  min-width: 160px;
+}
+
+.login-form-container a.login-button.disabled {
+  opacity: .5 !important;
+  background: #d6d6d6;
+}
+
+.login-form-container span.forgot-password {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #4184c4;
+}
+
+.forgot_pass-content input {
+  width: 97%;
+  padding: .7em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff !important;
+  outline: none;
+}
+.forgot_pass-content{
+  display: inline-block;
+  padding: 30px 128px 47px;
+}
+.send-btn{
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+.send-btn button {
+  padding: 7px 46px;
+  background: #09c;
+  color: #fff;
+}
+.back-to-login{
+  display: flex;
+  justify-content: end;
+}
+.back-to-login p{
+  cursor: pointer;
+  text-decoration: underline;
+  color: #4184c4;
 }

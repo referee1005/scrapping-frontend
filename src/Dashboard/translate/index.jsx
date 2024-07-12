@@ -18,6 +18,7 @@ import SideBarTabs from './SideBarTabs'
 import Badge from '@mui/material/Badge'
 import { styled } from '@mui/material/styles'
 import Setting from './setting'
+import AddCommentButton from './AddCommentButton'
 import Comment from './Comment'
 import ItemCheck from './ItemCheck'
 import ItemContainer from './ItemContainer'
@@ -58,8 +59,8 @@ function Editor () {
         style={
           commentModal
             ? {
-                scale: '90%',
-                transform: 'translate(-5%, 10%)'
+                scale: '85%',
+                transform: 'translate(-9%, 0)'
               }
             : {}
         }
@@ -128,24 +129,25 @@ function Editor () {
                               }
                             : {
                                 background: '#d9e0e8',
-                                flex: 1
+                                flex: 1,
+                                border: '1px solid #aebdcd'
                               }
-                          //     ,
-                          // translated.includes(index)
-                          //   ? {
-                          //       borderRight: 20,
-                          //       borderColor: 'red',
-                          //       borderStyle: 'solid'
-                          //     }
-                          //   : null
                         }
                       >
                         <Box
                           component='section'
                           sx={{ p: 2 }}
-                          style={
-                            editvalue === value ? { paddingBottom: 0 } : null
-                          }
+                          style={Object.assign(
+                            editvalue === value ? { paddingBottom: 0 } : {},
+                            translated.includes(index)
+                              ? {
+                                  border: 0,
+                                  borderRight: 10,
+                                  borderRightColor: '#2fb177',
+                                  borderStyle: 'solid'
+                                }
+                              : {}
+                          )}
                           onClick={() => {
                             setValue(value)
                           }}
@@ -159,6 +161,7 @@ function Editor () {
                             setTranslated={() =>
                               setTranslated([...translated, index])
                             }
+                            visibleModal={() => visibleCommentModal(false)}
                           />
                         </Box>
                         {editvalue === value && (
@@ -168,8 +171,15 @@ function Editor () {
                     </ListItem>
                   </Grid>
                   <Grid items xs={1}>
+                    {commentModal && editvalue === value && (
+                      <Comment
+                        visibleModal={() => visibleCommentModal(false)}
+                      />
+                    )}
                     {editvalue === value && hover === index && (
-                      <Comment visibleModal={e => visibleCommentModal(e)} />
+                      <AddCommentButton
+                        visibleModal={e => visibleCommentModal(e)}
+                      />
                     )}
                   </Grid>
                 </Grid>
