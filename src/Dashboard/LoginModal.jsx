@@ -40,7 +40,7 @@ export const LoginModal = ({ open, handleClose }) => {
     setForgotPassModal(false)
   }
   return (
-    <Toolbar>
+    <>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -121,6 +121,6 @@ export const LoginModal = ({ open, handleClose }) => {
         </Toolbar>
       </Dialog>
       <ForgotPassModal open={forgotPassModal} handleClose={closeForgotModal} />
-    </Toolbar>
+    </>
   )
 }
