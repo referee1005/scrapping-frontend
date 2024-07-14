@@ -22,39 +22,68 @@ const ItemContainer = ({
   splitSegment,
   setTranslated,
   visibleModal,
+  setSearchCount,
   invisibleSplitSegment
 }) => {
   const classes = useStyles()
   const [hoverArrow, setHoverArrow] = React.useState(null)
-  /* useEffect(() => {
+  // const [searchCount, setSearchCount] = React.useState(0)
+  useEffect(() => {
+    let count = 0,
+      segmentCount = 0
+    const sources = document.getElementsByClassName('source')
+    const targets = document.getElementsByClassName('target')
 
-    const sources = document.getElementsByClassName('source').children
-    const targets = document.getElementsByClassName('target').children
-    console.log(sources, sources.item(1))
     for (let i = 0; i < sources.length; i++) {
+      let sourceCount = 0,
+        targetCount = 0
       let highlightedSourceText = sources
         .item(i)
-        .replace(
-          /s/g,
+        .textContent.replaceAll(
+          sText['source'],
           '<span style="background-color: yellow;">' +
             sText['source'] +
             '</span>'
         )
+
+      if (sText['source'])
+        sourceCount = (
+          sources.item(i).textContent.match(new RegExp(sText['source'], 'g')) ||
+          []
+        ).length
+      if (sText['target'])
+        targetCount = (
+          targets.item(i).textContent.match(new RegExp(sText['target'], 'g')) ||
+          []
+        ).length
+
+      sources.item(i).innerHTML = highlightedSourceText
       let highlightedTargetText = targets
         .item(i)
-        .replace(
-          /s/g,
+        .textContent.replaceAll(
+          sText['target'],
           '<span style="background-color: yellow;">' +
             sText['target'] +
             '</span>'
         )
-      document.getElementsByClassName('source').innerHTML =
-        highlightedSourceText
-      document.getElementsByClassName('target').innerHTML =
-        highlightedTargetText
-    }
 
-  }, [sText]) */
+      if (sText['source'] && sText['target']) {
+        if (sourceCount && targetCount) {
+          segmentCount++
+          count += sourceCount
+        }
+      } else if (sText['source'] || sText['target']) {
+        if (sourceCount || targetCount) {
+          segmentCount++
+          count += targetCount
+          count += sourceCount
+        }
+      }
+
+      setSearchCount(count, segmentCount)
+      targets.item(i).innerHTML = highlightedTargetText
+    }
+  }, [sText])
 
   return (
     <>

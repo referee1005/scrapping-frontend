@@ -185,6 +185,8 @@ ui.form
   .ui.basic.button
   .text {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ui.dropdown > .text {
   display: inline-block;
@@ -254,7 +256,7 @@ ui.form
 .ui.dropdown .menu {
   cursor: auto;
   position: absolute;
-  display: none;
+  /* display: none; */
   outline: none;
   top: 100%;
   min-width: -webkit-max-content;
@@ -342,4 +344,82 @@ ui.form
   .find-actions
   button:last-child {
   width: max-content;
+}
+.ui.form
+  .find-wrapper
+  .find-container
+  .find-container-inside
+  .find-element.find-dropdown-status
+  .find-dropdown
+  .circular.label.translated-color {
+  background: #09c;
+}
+.ui.form
+  .find-wrapper
+  .find-container
+  .find-container-inside
+  .find-element.find-dropdown-status
+  .find-dropdown
+  .circular.label.draft-color {
+  background: #e8e8e8;
+}
+.ui.form
+  .find-wrapper
+  .find-container
+  .find-container-inside
+  .find-element.find-dropdown-status
+  .find-dropdown
+  .circular.label.new-color {
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.25) inset;
+  background: #fff;
+}
+.ui.form
+  .find-wrapper
+  .find-container
+  .find-container-inside
+  .find-element.find-dropdown-status
+  .find-dropdown
+  .circular.label.approved-color {
+  background: #2fb177;
+}
+#header-bars-wrapper .ui.dropdown .menu .item {
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 8px !important;
+}
+.ui.dropdown .menu > .item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  border: none;
+  height: auto;
+  text-align: left;
+  border-top: none;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0.78571429rem 1.14285714rem !important;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: normal;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-touch-callout: none;
+}
+.ui.empty.circular.labels .label,
+.ui.empty.circular.label {
+  min-width: 0em;
+  min-height: 0em;
+  width: 0.5em;
+  height: 0.5em;
+  vertical-align: baseline;
+  overflow: hidden;
+}
+.ui.circular.labels .label,
+.ui.circular.label {
+  min-width: 2em;
+  min-height: 2em;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 500rem;
+  padding: 0.5em !important;
 }

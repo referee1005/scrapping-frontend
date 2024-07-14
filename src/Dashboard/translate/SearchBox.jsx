@@ -1,18 +1,17 @@
 import React, { useState } from 'react'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
 import Button from '@mui/material/Button'
-import { Link } from '@mui/material'
-import FileDownloadIcon from '@mui/icons-material/FileDownload'
 import './searchBox.css'
+import CancelIcon from '@mui/icons-material/Cancel'
 
-export default function Navbar ({ searchText }) {
+export default function Navbar ({ searchText, searchCount }) {
   const [openLoginModal, setOpenLoginModal] = useState(false)
   const [sourceText, setSourceText] = useState('')
   const [targetText, setTargetText] = useState('')
+  const [sourcetempText, setSourceTempText] = useState('')
+  const [targettempText, setTargetTempText] = useState('')
+  const [visibleSegement, setVisibleSegment] = useState(false)
+  const [segment, setSegment] = useState(0)
+  const [visibleCancel, setVisibleCancel] = useState(false)
 
   const openLogin = () => {
     setOpenLoginModal(true)
@@ -20,7 +19,26 @@ export default function Navbar ({ searchText }) {
   const closeLogin = () => {
     setOpenLoginModal(false)
   }
+  const changeSegment = segment => {
+    let change
+    if (segment === 1) {
+      change =
+        " <div class='item' data-value='TRANSLATED'><div class='ui new-color empty circular label'></div>NEW</div>"
+    } else if (segment === 2) {
+      change =
+        "<div class='item' data-value='TRANSLATED'><div class='ui draft-color empty circular label'></div>DRAFT</div>"
+    } else if (segment === 3) {
+      change =
+        "<div class='item' data-value='TRANSLATED'><div class='ui translated-color empty circular label'></div>TRANSLATED</div>"
+    } else if (segment === 4) {
+      change =
+        "<div class='item' data-value='TRANSLATED'><div class='ui approved-color empty circular label'></div>APPROVED</div>"
+    } else change = '<div>Status Segment</div>'
 
+    document.getElementsByClassName('text')[0].innerHTML = change
+    setSegment(segment)
+    setVisibleSegment(false)
+  }
   return (
     <>
       <div id='header-bars-wrapper'>
@@ -36,9 +54,11 @@ export default function Navbar ({ searchText }) {
                           type='text'
                           tabindex='1'
                           placeholder='Find in source'
-                          value={sourceText}
-                          onChange={event => setSourceText(event.target.value)}
-                          // value=''
+                          value={sourcetempText}
+                          onChange={event =>
+                            setSourceTempText(event.target.value)
+                          }
+                          style={{ width: '100%' }}
                         />
                       </div>
                       <div class='find-exact-match'>
@@ -59,11 +79,11 @@ export default function Navbar ({ searchText }) {
                             type='text'
                             tabindex='2'
                             placeholder='Find in target'
-                            value={targetText}
+                            value={targettempText}
                             onChange={event =>
-                              setTargetText(event.target.value)
+                              setTargetTempText(event.target.value)
                             }
-                            // value=''
+                            style={{ width: '100%' }}
                           />
                         </div>
                         <div class='enable-replace-check disabled'>
@@ -73,45 +93,94 @@ export default function Navbar ({ searchText }) {
                       </div>
                     </div>
                     <div class='find-element find-dropdown-status'>
-                      <div class='find-dropdown not-filtered disabled'>
+                      <div class='find-dropdown not-filtered'>
                         <div
                           class='ui top left pointing dropdown basic tiny button'
                           tabindex='0'
+                          onMouseOver={() => {
+                            if (segment) {
+                              setVisibleCancel(true)
+                            }
+                          }}
+                          onMouseOut={(_, w, e) => {
+                            if (segment) setVisibleCancel(false)
+                          }}
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                          }}
                         >
-                          <div class='text'>
+                          <div
+                            class='text'
+                            style={{ width: 150, height: 40 }}
+                            onClick={() => setVisibleSegment(!visibleSegement)}
+                          >
                             <div>Status Segment</div>
                           </div>
-                          <div class='ui cancel label'>
-                            <i class='icon-cancel3'></i>
+                          <div
+                            className='cancel'
+                            style={{
+                              display: visibleCancel ? 'inline' : 'none'
+                            }}
+                          >
+                            <CancelIcon
+                              onMouseOver={() => {
+                                setVisibleCancel(true)
+                              }}
+                              onClick={() => {
+                                changeSegment(0)
+                                setVisibleCancel(false)
+                              }}
+                            />
                           </div>
-                          <div class='menu' tabindex='-1'>
-                            <div class='item' data-value='NEW'>
-                              <div class='ui new-color empty circular label'></div>
-                              NEW
+                          {/* )} */}
+                          {visibleSegement && (
+                            <div class='menu transition visible' tabindex='-1'>
+                              <div
+                                class='item'
+                                data-value='NEW'
+                                onClick={() => changeSegment(1)}
+                              >
+                                <div class='ui new-color empty circular label'></div>
+                                NEW
+                              </div>
+                              <div
+                                class='item'
+                                data-value='DRAFT'
+                                onClick={() => changeSegment(2)}
+                              >
+                                <div class='ui draft-color empty circular label'></div>
+                                DRAFT
+                              </div>
+                              <div
+                                class='item'
+                                data-value='TRANSLATED'
+                                onClick={() => changeSegment(3)}
+                              >
+                                <div class='ui translated-color empty circular label'></div>
+                                TRANSLATED
+                              </div>
+                              <div
+                                class='item'
+                                data-value='APPROVED'
+                                onClick={() => changeSegment(4)}
+                              >
+                                <div class='ui approved-color empty circular label'></div>
+                                APPROVED
+                              </div>
                             </div>
-                            <div class='item' data-value='DRAFT'>
-                              <div class='ui draft-color empty circular label'></div>
-                              DRAFT
-                            </div>
-                            <div class='item' data-value='TRANSLATED'>
-                              <div class='ui translated-color empty circular label'></div>
-                              TRANSLATED
-                            </div>
-                            <div class='item' data-value='APPROVED'>
-                              <div class='ui approved-color empty circular label'></div>
-                              APPROVED
-                            </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     </div>
                     <div class='find-element find-clear-all'>
-                      {(sourceText || targetText) && (
+                      {(sourcetempText || targettempText) && (
                         <div
                           class='find-clear'
                           onClick={() => {
-                            setSourceText('')
-                            setTargetText('')
+                            setSourceTempText('')
+                            setTargetTempText('')
                           }}
                         >
                           <button type='button' class=''>
@@ -131,7 +200,11 @@ export default function Navbar ({ searchText }) {
                       </button> */}
                       <Button
                         variant='outlined'
-                        onClick={() => searchText(sourceText, targetText)}
+                        onClick={() => {
+                          setSourceText(sourcetempText)
+                          setTargetText(targettempText)
+                          searchText(sourcetempText, targettempText)
+                        }}
                         // disabled
                       >
                         FIND
@@ -161,11 +234,48 @@ export default function Navbar ({ searchText }) {
                 </div>
                 <div class='search-display'>
                   <p class='found'>
-                    <span class='numbers'>No segments found</span> having
-                    <span class='query'>
-                      <span class='param'>text</span>in source{' '}
-                    </span>{' '}
-                    (case insensitive)
+                    {!searchCount[0] && (sourceText || targetText) ? (
+                      <span class='numbers'>
+                        {' '}
+                        No segments found having{' '}
+                        <span style={{ background: 'yellow' }}>
+                          {sourceText}
+                        </span>{' '}
+                        in source{' '}
+                        <span style={{ background: 'yellow' }}>
+                          {targetText}
+                        </span>{' '}
+                        in target (case insensitive)'
+                      </span>
+                    ) : null}
+                    {searchCount[0] && sourceText && targetText ? (
+                      <span class='numbers'>
+                        Found {searchCount[1]} segments having{' '}
+                        <span style={{ background: 'yellow' }}>
+                          {sourceText}
+                        </span>{' '}
+                        in source{' '}
+                        <span style={{ background: 'yellow' }}>
+                          {' '}
+                          {targetText}
+                        </span>{' '}
+                        in target (case insensitive)
+                      </span>
+                    ) : searchCount[0] && (sourceText || targetText) ? (
+                      <span class='numbers'>
+                        Found {searchCount[0]} results in {searchCount[1]}{' '}
+                        segments having
+                        <span style={{ background: 'yellow' }}>
+                          {sourceText}
+                        </span>{' '}
+                        in source{' '}
+                        <span style={{ background: 'yellow' }}>
+                          {' '}
+                          {targetText}
+                        </span>{' '}
+                        in target (case insensitive)
+                      </span>
+                    ) : null}
                   </p>
                 </div>
               </div>

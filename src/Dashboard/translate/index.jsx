@@ -61,6 +61,7 @@ function Editor () {
   const [translated, setTranslated] = React.useState([])
   const [text, setText] = useState(dummyText)
   const [sText, setSearchText] = useState({})
+  const [searchCount, setSearchCount] = useState([])
 
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value)
@@ -82,22 +83,22 @@ function Editor () {
   }))
 
   const searchText = (source, target) => {
-    setText(
-      dummyText.filter((value, index) => {
-        if (
-          value['source'].includes(source) &&
-          value['target'].includes(target)
-        ) {
-          return true
-        } else return false
-      })
-    )
-    // setSearchText({ source, target })
-    console.log(source, target)
+    // setText(
+    //   dummyText.filter((value, index) => {
+    //     if (
+    //       value['source'].includes(source) &&
+    //       value['target'].includes(target)
+    //     ) {
+    //       return true
+    //     } else return false
+    //   })
+    // )
+    setSearchText({ source, target })
   }
+
   return (
     <>
-      <TransNavbar searchText={searchText} />
+      <TransNavbar searchText={searchText} searchCount={searchCount} />
       <div style={{ height: '100vh' }}>
         <div
           className='landscape'
@@ -142,7 +143,6 @@ function Editor () {
             }}
           >
             {text.map((value, index) => {
-              console.log('ttttt', text)
               const labelId = `checkbox-list-secondary-label-${value}`
               return (
                 <>
@@ -223,6 +223,9 @@ function Editor () {
                               visibleModal={() => visibleCommentModal(false)}
                               text={text[index]}
                               sText={sText}
+                              setSearchCount={(count, segment) =>
+                                setSearchCount([count, segment])
+                              }
                             />
                           </Box>
                           {editvalue === value && (

@@ -9,7 +9,7 @@ import { Link } from '@mui/material'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
 import SearchBox from './SearchBox'
 
-export default function Navbar ({ searchText }) {
+export default function Navbar ({ searchText, searchCount }) {
   const [searchBox, visibleSearchBox] = useState(false)
   const [openLoginModal, setOpenLoginModal] = useState(false)
   const openLogin = () => {
@@ -181,14 +181,21 @@ export default function Navbar ({ searchText }) {
                 </svg>
               </div>
             </Link>
-            <Link color='inherit' className='button_white'>
+            <Link
+              color='inherit'
+              className='button_white'
+              style={{
+                background: 'none',
+                padding: 0
+              }}
+            >
               <div
                 id='mbc-history'
                 title='View comments'
                 className='mbc-history-balloon-icon-has-no-comments'
               >
                 <div>
-                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='3 3 36 36'>
+                  {/* <svg xmlns='http://www.w3.org/2000/svg' viewBox='3 3 36 36'>
                     <path
                       fill='#fff'
                       fillRule='evenodd'
@@ -196,6 +203,28 @@ export default function Navbar ({ searchText }) {
                       strokeWidth='1'
                       d='M33.125 13.977c-1.25-1.537-2.948-2.75-5.093-3.641C25.886 9.446 23.542 9 21 9c-2.541 0-4.885.445-7.031 1.336-2.146.89-3.844 2.104-5.094 3.64C7.625 15.514 7 17.188 7 19c0 1.562.471 3.026 1.414 4.39.943 1.366 2.232 2.512 3.867 3.439-.114.416-.25.812-.406 1.187-.156.375-.297.683-.422.922-.125.24-.294.505-.508.797a8.15 8.15 0 01-.484.617 249.06 249.06 0 00-1.023 1.133 1.1 1.1 0 00-.126.141l-.109.132-.094.141c-.052.078-.075.127-.07.148a.415.415 0 01-.031.156c-.026.084-.024.146.007.188v.016c.042.177.125.32.25.43a.626.626 0 00.422.163h.079a11.782 11.782 0 001.78-.344c2.73-.697 5.126-1.958 7.189-3.781.78.083 1.536.125 2.265.125 2.542 0 4.886-.445 7.032-1.336 2.145-.891 3.843-2.104 5.093-3.64C34.375 22.486 35 20.811 35 19c0-1.812-.624-3.487-1.875-5.023z'
                     ></path>
+                  </svg> */}
+                  <svg
+                    fill='#FFFFFF'
+                    // height='800px'
+                    // width='800px'
+                    version='1.1'
+                    id='Capa_1'
+                    xmlns='http://www.w3.org/2000/svg'
+                    xmlnsXlink='http://www.w3.org/1999/xlink'
+                    viewBox='0 0 217.762 217.762'
+                    xmlSpace='preserve'
+                    width={30}
+                    height={30}
+                  >
+                    <path
+                      d='M108.881,5.334C48.844,5.334,0,45.339,0,94.512c0,28.976,16.84,55.715,45.332,72.454
+      c-3.953,18.48-12.812,31.448-12.909,31.588l-9.685,13.873l16.798-2.153c1.935-0.249,47.001-6.222,79.122-26.942
+      c26.378-1.92,50.877-11.597,69.181-27.364c19.296-16.623,29.923-38.448,29.923-61.455C217.762,45.339,168.918,5.334,108.881,5.334z
+       M115.762,168.489l-2.049,0.117l-1.704,1.145c-18.679,12.548-43.685,19.509-59.416,22.913c3.3-7.377,6.768-17.184,8.499-28.506
+      l0.809-5.292l-4.741-2.485C30.761,142.547,15,119.42,15,94.512c0-40.901,42.115-74.178,93.881-74.178s93.881,33.276,93.881,74.178
+      C202.762,133.194,164.547,165.688,115.762,168.489z'
+                    />
                   </svg>
                   <div className='mbc-badge-container'></div>
                 </div>
@@ -324,7 +353,9 @@ export default function Navbar ({ searchText }) {
             </Link>
           </Toolbar>
         </Toolbar>
-        {searchBox && <SearchBox searchText={searchText} />}
+        {searchBox && (
+          <SearchBox searchText={searchText} searchCount={searchCount} />
+        )}
       </AppBar>
     </>
   )
