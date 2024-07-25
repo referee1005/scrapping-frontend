@@ -7,7 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CatTool from "./Dashboard/CatTool";
 // import { Container } from "@mui/material";
 import FooterShort from "./Dashboard/FooterShort";
-import Analyze from "./Dashboard/Analyze";
+import GoogleSearch from "./Dashboard/GoogleSearch";
+import YellowPage from "./Dashboard/YellowPage";
 import ChatBot from "./components/ChatBot";
 import QualityReport from "./components/QualityReport";
 import Manage from "./Dashboard/Manage/Manage";
@@ -19,14 +20,9 @@ function App() {
         {/* <Container> */}
         <Routes>
           <Route path="/" Component={CatTool}></Route>
-          <Route path="/analyze" Component={Analyze}></Route>
-          <Route path="/translate" Component={Translate}></Route>
-          <Route path="/manage" Component={Manage}></Route>
-          <Route path="/report" element={<QualityReport />} />
+          <Route path="/search_google" Component={GoogleSearch}></Route>
+          <Route path="/yellow_page" Component={YellowPage}></Route>
         </Routes>
-        <ChatBot />
-        {/* </Container> */}
-        {/* <NewFooter /> */}
       </BrowserRouter>
     </div>
   );
